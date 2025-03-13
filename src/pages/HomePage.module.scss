@@ -1,0 +1,30 @@
+@use "../sass/abstracts/" as *;
+
+.homePage {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  .header {
+    grid-column: 1 / -1;
+    background-color: yellow;
+  }
+
+  .aside {
+    display: none;
+    background-color: red;
+  }
+
+  .main {
+    grid-column: 1 / -1;
+    background-color: purple;
+  }
+
+  @include mq(lg) {
+    .aside {
+      display: block;
+    }
+    .main {
+      grid-column: span 1;
+    }
+  }
+}
