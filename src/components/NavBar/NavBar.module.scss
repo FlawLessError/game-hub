@@ -1,0 +1,9 @@
+@use "../../sass/abstracts/" as *;
+
+.header {
+  .logo {
+    img {
+      width: $size-13;
+    }
+  }
+}

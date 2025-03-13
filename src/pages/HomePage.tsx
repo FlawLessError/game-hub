@@ -1,11 +1,10 @@
+import NavBar from "../components/NavBar/NavBar";
 import styles from "./HomePage.module.scss";
 
 export default function HomePage() {
   return (
-    <div className={styles.homePage}>
-      <header className={styles.header}>
-        <h1>Nav</h1>
-      </header>
+    <div className={`${styles.homePage} container`} data-type="wide">
+      <NavBar className={styles.header} />
       <aside className={styles.aside}>
         <h1>Aside</h1>
       </aside>

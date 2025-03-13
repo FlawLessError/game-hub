@@ -13,14 +13,14 @@ $border-radios-round: 100vw;
 // spacing related
 $hero-padding-block: clamp($size-12, 0.5rem + 10vw, $size-13);
 $section-padding-block: clamp(rem(60), 0.5rem + 10vw, rem(80));
-$card-body-padding: rem(24);
+$card-body-padding: $size-4;
 
 // display gap related
 $grid-gap: 1.5rem;
 $flex-gap: 1rem;
 
 // container related
-$container-inline-padding: 1rem;
+$container-inline-padding: clamp(rem(10), 0.5rem + 3vw, rem(40));
 $container: rem(975);
-$container-wide: rem(1120);
+$container-wide: rem(1500);
 $container-narrow: rem(680);
