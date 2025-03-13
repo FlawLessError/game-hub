@@ -1,0 +1,14 @@
+@use "sass:meta";
+@use "sass:math";
+
+@function rem($size) {
+  @if (meta.type-of($size) != number) {
+    @error "$sizes is not a number!";
+  }
+
+  @if (math.is-unitless($size)) {
+    $size: $size * 1px;
+  }
+
+  @return math.div($size, 16px) * 1rem;
+}

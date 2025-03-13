@@ -1,0 +1,58 @@
+@use "sass:map";
+@use "sass:meta";
+@use "sass:math";
+
+@use "sizes" as *;
+@use "colors" as *;
+@use "typography" as *;
+@use "breakpoints" as *;
+
+// Media Query
+@mixin mq($size) {
+  @if (map.has-key($breakpoints, $size)) {
+    @media screen and (min-width: map.get($breakpoints, $size)) {
+      @content;
+    }
+  } @else if(meta.type-of($size) == number) {
+    @if (math.is-unitless($size) == false) {
+      @media screen and (min-width: $size) {
+        @content;
+      }
+    } @else {
+      @error "The size argument is unitless!";
+    }
+  } @else {
+    @error "The size argument is incorrect!";
+  }
+}
+
+// Flex-group
+@mixin flex-group($flex-column-gap: $flex-gap, $flex-row-gap: $flex-gap * 0.5) {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: $flex-column-gap;
+  row-gap: $flex-row-gap;
+  @content;
+}
+
+@mixin heading($font-size, $color: $color-accent-500) {
+  color: $color;
+  font-size: $font-size;
+  font-family: $ff-accent;
+  font-weight: $fw-700;
+  letter-spacing: $letter-spacing;
+  line-height: 1;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+// Visually hidden
+@mixin visually-hidden() {
+  position: absolute;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+}

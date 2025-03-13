@@ -1,0 +1,25 @@
+@use "sizes" as *;
+
+$theme-active: false;
+
+// box shadow related
+$box-shadow: 0 0 size(12) rgb(black, 0.25);
+
+// border related
+$border-radius-1: $size-1;
+$border-radios-round: 100vw;
+
+// spacing related
+$hero-padding-block: clamp($size-12, 0.5rem + 10vw, $size-13);
+$section-padding-block: clamp(rem(60), 0.5rem + 10vw, rem(80));
+$card-body-padding: rem(24);
+
+// display gap related
+$grid-gap: 1.5rem;
+$flex-gap: 1rem;
+
+// container related
+$container-inline-padding: 1rem;
+$container: rem(975);
+$container-wide: rem(1120);
+$container-narrow: rem(680);

@@ -1,0 +1,5 @@
+@use "../abstracts" as *;
+
+.flow-content > * + * {
+  margin-top: var(--flow-spacer, size(16));
+}

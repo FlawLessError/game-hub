@@ -1,0 +1,39 @@
+@use "functions" as *;
+
+$ff-sans: "Source Sans 3", sans-serif;
+$ff-serif: "Alegreya SC", serif;
+
+$ff-base: $ff-sans;
+$ff-accent: $ff-serif;
+
+$font-sizes: (
+  sm: (
+    400: rem(16),
+    500: rem(18),
+    600: rem(18),
+    700: rem(28),
+    800: rem(36),
+    900: rem(60),
+  ),
+  lg: (
+    400: rem(16),
+    500: rem(18),
+    600: rem(21),
+    700: rem(28),
+    800: rem(48),
+    900: rem(60),
+  ),
+);
+
+$fs-400: var(--fs-400);
+$fs-500: var(--fs-500);
+$fs-600: var(--fs-600);
+$fs-700: var(--fs-700);
+$fs-800: var(--fs-800);
+$fs-900: var(--fs-900);
+
+$fw-400: 400;
+$fw-600: 600;
+$fw-700: 700;
+
+$letter-spacing: 0.16em;
