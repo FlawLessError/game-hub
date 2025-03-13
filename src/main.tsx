@@ -1,6 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import RouterContextProvider from "./pages/RouterOutlet/RouterContextProvider";
+import RouterContextProvider from "./pages/Router/RouterContextProvider";
 
 import "./sass/main.scss";
 
