@@ -1,9 +1,25 @@
 @use "../../sass/abstracts/" as *;
 
 .header {
+  margin-block-start: $size-4;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-block: 0.5rem;
   .logo {
+    background-color: white;
+    border-radius: $border-radius-1;
+    overflow: hidden;
+
     img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: $size-13;
+      transition: 200ms ease-in-out transform;
+      &:hover {
+        transform: scale(1.5);
+      }
     }
   }
 }

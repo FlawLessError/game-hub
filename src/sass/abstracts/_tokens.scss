@@ -1,7 +1,7 @@
 @use "sizes" as *;
 @use "functions" as *;
 
-$theme-active: false;
+$theme-active: true;
 
 // box shadow related
 $box-shadow: 0 0 size(12) rgb(black, 0.25);

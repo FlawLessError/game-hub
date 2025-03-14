@@ -1,103 +1,34 @@
 // Colors
-$_clr-yellow-light: #ffe2b6;
-$_clr-yellow: #edb560;
-$_clr-yellow-dark: #895a12;
-
-$_clr-pink-light: #f7b4ca;
-$_clr-pink: #e1618b;
-$_clr-pink-dark: #781032;
-
-$_clr-blue-light: #a1e8fe;
-$_clr-blue: #38afd4;
-$_clr-blue-dark: #155d74;
-
 $color-neutral-100: var(--clr-neutral-100);
-$color-neutral-200: var(--clr-neutral-200);
+$color-neutral-300: var(--clr-neutral-300);
+$color-neutral-400: var(--clr-neutral-400);
+$color-neutral-500: var(--clr-neutral-500);
 $color-neutral-600: var(--clr-neutral-600);
+$color-neutral-700: var(--clr-neutral-700);
 $color-neutral-800: var(--clr-neutral-800);
-
-$color-accent-200: var(--clr-accent-200);
-$color-accent-300: var(--clr-accent-300);
-$color-accent-400: var(--clr-accent-400);
-$color-accent-700: var(--clr-accent-700);
-
-$color-primary-100: var(--clr-primary-100);
-$color-primary-200: var(--clr-primary-200);
-$color-primary-400: var(--clr-primary-400);
-$color-primary-700: var(--clr-primary-700);
-
-$color-yellow-300: var(--clr-yellow-300);
-$color-yellow-400: var(--clr-yellow-400);
-$color-yellow-500: var(--clr-yellow-500);
-
-$color-pink-300: var(--clr-pink-300);
-$color-pink-400: var(--clr-pink-400);
-$color-pink-500: var(--clr-pink-500);
-
-$color-blue-300: var(--clr-blue-300);
-$color-blue-400: var(--clr-blue-400);
-$color-blue-500: var(--clr-blue-500);
 
 // Light
 $light: (
   "neutral": (
     100: #ffffff,
-    200: #e9e9e9,
-    600: #6b6b6b,
-    800: #414141,
-  ),
-  "accent": (
-    200: #a1feeb,
-    300: #0afac9,
-    400: #00d2ac,
-    700: #0a5949,
-  ),
-
-  "primary": (
-    100: #f1f5fa,
-    200: #cfd9ea,
-    400: #345995,
-    700: #263651,
-  ),
-
-  "yellow": (
-    300: $_clr-yellow-light,
-    400: $_clr-yellow,
-    500: $_clr-yellow-dark,
-  ),
-
-  "pink": (
-    300: $_clr-pink-light,
-    400: $_clr-pink,
-    500: $_clr-pink-dark,
-  ),
-
-  "blue": (
-    300: $_clr-blue-light,
-    400: $_clr-blue,
-    500: $_clr-blue-dark,
+    300: #303030,
+    400: #3b3b3b,
+    500: #202020,
+    600: #262626,
+    700: #141414,
+    800: #000000,
   ),
 );
 
 // Dark
-// $dark: (
-//   "neutral": (
-//     100: $_clr-brown-800,
-//   ),
-//   "accent": (
-//     300: $_clr-orange-300,
-//     400: $_clr-orange-400,
-//     500: $_clr-orange-500,
-//     600: $_clr-orange-600,
-//   ),
-//
-//   "primary": (
-//     100: $_clr-brown-900,
-//     200: $_clr-brown-800,
-//     300: $_clr-brown-700,
-//     400: $_clr-brown-400,
-//     700: $_clr-brown-300,
-//     800: $_clr-brown-200,
-//     900: $_clr-brown-100,
-//   ),
-// );
+$dark: (
+  "neutral": (
+    800: #ffffff,
+    700: #303030,
+    600: #3b3b3b,
+    500: #202020,
+    400: #262626,
+    300: #141414,
+    100: #000000,
+  ),
+);

@@ -3,6 +3,7 @@ import styles from "./NavBar.module.scss";
 import { NavHashLink } from "react-router-hash-link";
 import Logo from "../../assets/Logo.svg";
 import { ComponentPropsWithoutRef } from "react";
+import ColorModeSwitch from "../ColorModeSwitch/ColorModeSwitch";
 
 type Props = {
   className?: string;
@@ -14,6 +15,7 @@ const NavBar = (props: Props) => {
       <NavHashLink to="/#" className={styles.logo}>
         <img src={Logo} alt="game hub logo" />
       </NavHashLink>
+      <ColorModeSwitch />
     </header>
   );
 };
