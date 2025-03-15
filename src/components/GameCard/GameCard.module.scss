@@ -2,8 +2,7 @@
 
 .gameCard {
   user-select: text;
-  cursor: pointer;
-  height: 100%;
+  height: 20rem;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -20,27 +19,35 @@
     pointer-events: none;
     height: 100%;
     object-fit: cover;
+    object-position: top;
   }
 
   .info {
     padding: $card-body-padding;
+    flex-basis: 80%;
   }
 
   .platforms_metric {
     display: flex;
     justify-content: space-between;
     gap: $flex-gap;
-
-    & > p {
-    }
   }
 
   .title {
     display: inline-block;
+    padding: 0.2rem;
+    border: 2px solid transparent;
+    border-radius: $border-radius-1;
     text-decoration: none;
     color: $color-neutral-800;
     font-weight: $fw-700;
     font-size: $fs-700;
+    line-height: 1.05;
+    transition: 200ms ease-in-out;
+
+    &:is(:hover, :focus) {
+      border-color: $color-neutral-800;
+    }
   }
 
   &:is(:hover, :focus) {

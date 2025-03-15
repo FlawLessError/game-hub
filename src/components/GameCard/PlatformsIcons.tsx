@@ -31,7 +31,9 @@ const PlatformsIcons = ({ platforms }: Props) => {
     platforms = platforms.slice(0, 4);
     return (
       <div className={styles.iconList}>
-        {platforms.map(({ slug }) => icon[slug])}
+        {platforms.map(({ slug }) => (
+          <div key={slug}>{icon[slug]}</div>
+        ))}
         <p>+{remains}</p>
       </div>
     );
@@ -39,7 +41,9 @@ const PlatformsIcons = ({ platforms }: Props) => {
 
   return (
     <div className={styles.iconList}>
-      {platforms.map(({ slug }) => icon[slug])}
+      {platforms.map(({ slug }) => (
+        <div key={slug}>{icon[slug]}</div>
+      ))}
     </div>
   );
 };
