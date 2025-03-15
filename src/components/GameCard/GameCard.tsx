@@ -3,6 +3,7 @@ import styles from "./GameCard.module.scss";
 import { Link } from "react-router-dom";
 import { Game } from "../../hooks/useGames";
 import PlatformsIcons from "./PlatformsIcons";
+import CriticScore from "./CriticScore";
 
 type Props = {
   game: Game;
@@ -17,17 +18,7 @@ const GameCard = ({ game }: Props) => {
           <PlatformsIcons
             platforms={game.parent_platforms.map(({ platform }) => platform)}
           />
-          <p
-            data-type={
-              game.metacritic >= 70
-                ? "good"
-                : game.metacritic >= 40
-                  ? "ok"
-                  : "bad"
-            }
-          >
-            {game.metacritic}
-          </p>
+          <CriticScore metacritic={game.metacritic} />
         </div>
         <Link to="#" className={styles.title}>
           {game.name}

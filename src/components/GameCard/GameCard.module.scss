@@ -32,37 +32,6 @@
     gap: $flex-gap;
 
     & > p {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-weight: $fw-700;
-      border: 2px solid white;
-      border-radius: $border-radius-1;
-      padding: 0.2rem;
-      width: 2rem;
-      height: 2rem;
-
-      &[data-type="good"] {
-        color: $color-green;
-        background-color: rgb($color-green, 0.1);
-        border-color: $color-green;
-        box-shadow: 0 0 0.15rem $color-green;
-        text-shadow: 0 0 0.1rem $color-green;
-      }
-      &[data-type="ok"] {
-        background-color: rgb($color-orange, 0.1);
-        color: $color-orange;
-        border-color: $color-orange;
-        box-shadow: 0 0 0.15rem $color-orange;
-        text-shadow: 0 0 0.1rem $color-orange;
-      }
-      &[data-type="bad"] {
-        background-color: rgb($color-red, 0.1);
-        color: $color-red;
-        border-color: $color-red;
-        box-shadow: 0 0 0.15rem $color-red;
-        text-shadow: 0 0 0.1rem $color-red;
-      }
     }
   }
 
