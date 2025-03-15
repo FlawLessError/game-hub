@@ -2,9 +2,16 @@ import { useEffect, useState } from "react";
 import apiClient from "../services/api-client";
 import { CanceledError } from "axios";
 
-type Game = {
+export type Game = {
   id: number;
   name: string;
+  background_image: string;
+  metacritic: number;
+  parent_platforms: {
+    platform: {
+      slug: string;
+    };
+  }[];
 };
 
 type FetchedData = {

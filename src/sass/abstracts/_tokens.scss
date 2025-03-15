@@ -3,11 +3,14 @@
 
 $theme-active: true;
 
+// Bottom Space
+$bottom-margin-block-end: 10rem;
+
 // box shadow related
 $box-shadow: 0 0 size(12) rgb(black, 0.25);
 
 // border related
-$border-radius-1: $size-1;
+$border-radius-1: $size-2;
 $border-radios-round: 100vw;
 
 // spacing related
@@ -22,5 +25,5 @@ $flex-gap: 1rem;
 // container related
 $container-inline-padding: clamp(rem(10), 0.5rem + 3vw, rem(40));
 $container: rem(975);
-$container-wide: rem(1500);
+$container-wide: rem(1800);
 $container-narrow: rem(680);

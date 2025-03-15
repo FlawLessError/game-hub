@@ -1,0 +1,15 @@
+@use "../../sass/abstracts/" as *;
+
+.iconList {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0.3rem;
+  & > * {
+    color: $color-neutral-700;
+    font-size: $fs-500;
+  }
+  p {
+    font-weight: $fw-400;
+  }
+}

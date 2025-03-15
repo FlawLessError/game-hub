@@ -2,7 +2,9 @@
 
 .homePage {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: rem(250) 1fr;
+  gap: $grid-gap;
+  margin-block-end: $bottom-margin-block-end;
 
   .header {
     grid-column: 1 / -1;
@@ -15,7 +17,6 @@
 
   .main {
     grid-column: 1 / -1;
-    background-color: purple;
   }
 
   @include mq(lg) {
