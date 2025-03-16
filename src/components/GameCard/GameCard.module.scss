@@ -5,10 +5,10 @@
   height: $game-card-height;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
   border-radius: $border-radius-1;
   background-color: $color-neutral-200;
-  box-shadow: 0.2rem 0.2rem 0.5rem rgb(black, 0.3);
+  box-shadow: $box-shadow;
+  overflow: hidden;
   transition: 200ms ease-in-out;
 
   & > * {

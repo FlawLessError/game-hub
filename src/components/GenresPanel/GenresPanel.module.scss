@@ -1,0 +1,28 @@
+@use "../../sass/abstracts/" as *;
+
+.panel {
+  background-color: $color-neutral-100;
+  box-shadow: $box-shadow;
+  padding: $card-body-padding;
+  border-radius: $border-radius-1;
+  height: fit-content;
+
+  .genre {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: $flex-gap;
+
+    img {
+      width: 4rem;
+      height: 3rem;
+      border-radius: $border-radius-1;
+      object-fit: cover;
+    }
+
+    .title {
+      font-size: $fs-500;
+      font-weight: $fw-700;
+    }
+  }
+}

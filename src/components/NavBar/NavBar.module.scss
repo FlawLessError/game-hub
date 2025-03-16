@@ -1,11 +1,11 @@
 @use "../../sass/abstracts/" as *;
 
 .header {
-  margin-block-start: $size-4;
+  margin-block-start: $size-8;
   display: flex;
   justify-content: space-between;
   align-items: end;
-  margin-block: 0.5rem;
+  margin-block-end: 0.5rem;
   .logo {
     background-color: white;
     border-radius: $border-radius-1;
