@@ -22,16 +22,22 @@ type FetchedData = {
 const useGames = () => {
   const [games, setGames] = useState<Game[]>([]);
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const controller = new AbortController();
+    setLoading(true);
 
     apiClient
       .get<FetchedData>("/games", { signal: controller.signal })
-      .then((res) => setGames(res.data.results))
+      .then((res) => {
+        setGames(res.data.results);
+        setLoading(false);
+      })
       .catch((err) => {
         if (err instanceof CanceledError) return null;
         setError(err.message);
+        setLoading(false);
       });
 
     return () => {
@@ -39,7 +45,7 @@ const useGames = () => {
     };
   }, []);
 
-  return { games, setGames, error, setError };
+  return { games, setGames, error, setError, loading, setLoading };
 };
 
 export default useGames;

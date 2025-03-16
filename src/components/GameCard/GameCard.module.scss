@@ -2,7 +2,7 @@
 
 .gameCard {
   user-select: text;
-  height: 20rem;
+  height: $game-card-height;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -36,6 +36,8 @@
   .title {
     display: inline-block;
     padding: 0.2rem;
+    padding-inline-start: 0;
+    margin-inline-start: -2px;
     border: 2px solid transparent;
     border-radius: $border-radius-1;
     text-decoration: none;
