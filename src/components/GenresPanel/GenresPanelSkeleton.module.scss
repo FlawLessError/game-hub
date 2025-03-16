@@ -1,0 +1,41 @@
+@use "../../sass/abstracts/" as *;
+
+.panel {
+  background-color: $color-neutral-100;
+  box-shadow: $box-shadow;
+  padding: $card-body-padding;
+  border-radius: $border-radius-1;
+  height: fit-content;
+
+  .genre {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: $flex-gap;
+
+    .img {
+      width: 6rem;
+      height: 3rem;
+      border-radius: $border-radius-1;
+      animation: flash 3s infinite linear;
+    }
+
+    .title {
+      width: 100%;
+      min-height: 1rem;
+      border-radius: calc($border-radius-1 / 2);
+      animation: flash 3s infinite linear;
+    }
+  }
+}
+
+@keyframes flash {
+  0% {
+    @include setBg();
+    background-position-x: -50%;
+  }
+  100% {
+    @include setBg();
+    background-position-x: -250%;
+  }
+}

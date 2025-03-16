@@ -56,3 +56,14 @@
   clip: rect(0, 0, 0, 0);
   clip-path: inset(50%);
 }
+
+// Skeleton Animation
+@mixin setBg {
+  background: linear-gradient(
+    130deg,
+    $color-neutral-300 45%,
+    $color-neutral-600,
+    $color-neutral-300 55%
+  );
+  background-size: 500%;
+}

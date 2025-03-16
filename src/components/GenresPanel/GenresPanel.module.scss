@@ -1,11 +1,14 @@
 @use "../../sass/abstracts/" as *;
 
 .panel {
+  position: sticky;
+  top: 2rem;
   background-color: $color-neutral-100;
   box-shadow: $box-shadow;
   padding: $card-body-padding;
   border-radius: $border-radius-1;
-  height: fit-content;
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
 
   .genre {
     display: flex;

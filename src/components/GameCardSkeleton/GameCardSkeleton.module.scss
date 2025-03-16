@@ -59,16 +59,6 @@
   }
 }
 
-@mixin setBg {
-  background: linear-gradient(
-    130deg,
-    $color-neutral-300 45%,
-    $color-neutral-600,
-    $color-neutral-300 55%
-  );
-  background-size: 500%;
-}
-
 @keyframes flash {
   0% {
     @include setBg();

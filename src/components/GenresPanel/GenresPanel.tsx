@@ -2,6 +2,7 @@ import styles from "./GenresPanel.module.scss";
 
 import useGenres from "../../hooks/useGerners";
 import imageCrop from "../../services/image-crop";
+import GenresPanelSkeleton from "./GenresPanelSkeleton";
 
 type Props = {
   className: string;
@@ -9,6 +10,9 @@ type Props = {
 
 const GenresPanel = ({ className }: Props) => {
   const { data, error, loading } = useGenres();
+
+  if (error) return null;
+  if (loading) return <GenresPanelSkeleton className={className} />;
 
   return (
     <aside className={`${className} ${styles.panel}`}>
