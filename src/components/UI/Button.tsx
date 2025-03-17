@@ -2,10 +2,12 @@ import styles from "./Button.module.scss";
 
 import { ComponentPropsWithoutRef } from "react";
 
-type ButtonProps = ComponentPropsWithoutRef<"button">;
+type ButtonProps = { className: string } & ComponentPropsWithoutRef<"button">;
 
-const Button = ({ ...rest }: ButtonProps) => {
-  return <button className={styles.button} {...rest} />;
+const Button = (props: ButtonProps) => {
+  const { className, ...rest } = props;
+
+  return <button className={`${className} ${styles.button}`} {...rest} />;
 };
 
 export default Button;

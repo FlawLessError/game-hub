@@ -3,6 +3,9 @@ import styles from "./GenresPanel.module.scss";
 import useGenres from "../../hooks/useGerners";
 import imageCrop from "../../services/image-crop";
 import GenresPanelSkeleton from "./GenresPanelSkeleton";
+import Button from "../UI/Button";
+import { useAppDispatch } from "../../store/hooks";
+import { changeGenre } from "../../store/genre-slice";
 
 type Props = {
   className: string;
@@ -10,6 +13,7 @@ type Props = {
 
 const GenresPanel = ({ className }: Props) => {
   const { data, error, loading } = useGenres();
+  const dispatch = useAppDispatch();
 
   if (error) return null;
   if (loading) return <GenresPanelSkeleton className={className} />;
@@ -19,12 +23,18 @@ const GenresPanel = ({ className }: Props) => {
       <ul className="flow-content">
         {data.map((genre) => (
           <li key={genre.id} className={styles.genre}>
-            <img
-              src={imageCrop(genre.image_background)}
-              alt=""
-              aria-hidden="true"
-            />
-            <p className={styles.title}>{genre.name}</p>
+            <Button
+              data-type="link"
+              className={styles.title}
+              onClick={() => dispatch(changeGenre(genre.id))}
+            >
+              <img
+                src={imageCrop(genre.image_background)}
+                alt=""
+                aria-hidden="true"
+              />
+              {genre.name}
+            </Button>
           </li>
         ))}
       </ul>

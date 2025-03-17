@@ -1,4 +1,5 @@
 import useGames from "../../hooks/useGames";
+import { useAppSelector } from "../../store/hooks";
 import GameCard from "../GameCard/GameCard";
 import GameCardSkeleton from "../GameCardSkeleton/GameCardSkeleton";
 
@@ -7,7 +8,8 @@ type Props = {
 };
 
 const GameGrid = ({ className }: Props) => {
-  const { data, error, loading } = useGames();
+  const selector = useAppSelector((state) => state);
+  const { data, error, loading } = useGames(selector.genreId);
 
   const skeletonCards: number[] = new Array(8).fill(0).map((_, i) => i + 1);
 
@@ -21,11 +23,12 @@ const GameGrid = ({ className }: Props) => {
               <GameCardSkeleton />
             </li>
           ))}
-        {data.map((game) => (
-          <li key={game.id}>
-            <GameCard game={game} />
-          </li>
-        ))}
+        {!loading &&
+          data.map((game) => (
+            <li key={game.id}>
+              <GameCard game={game} />
+            </li>
+          ))}
       </ul>
     </main>
   );

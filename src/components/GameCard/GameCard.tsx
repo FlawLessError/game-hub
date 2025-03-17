@@ -19,7 +19,7 @@ const GameCard = ({ game }: Props) => {
           <PlatformsIcons
             platforms={game.parent_platforms.map(({ platform }) => platform)}
           />
-          <CriticScore metacritic={game.metacritic} />
+          {game.metacritic && <CriticScore metacritic={game.metacritic} />}
         </div>
         <Link to="#" className={styles.title}>
           {game.name}

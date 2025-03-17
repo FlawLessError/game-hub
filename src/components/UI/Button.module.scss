@@ -11,24 +11,19 @@
   transition: 250ms ease-out;
 
   &[data-type="primary"] {
-    background-color: $color-primary-400;
+    background-color: $color-neutral-400;
     color: $color-neutral-100;
     &:is(:hover, :focus) {
-      background-color: $color-blue-300;
-      color: $color-primary-700;
+      background-color: $color-neutral-100;
+      color: $color-neutral-400;
     }
   }
-  &[data-type="accent"] {
-    background-color: $color-accent-300;
-    color: $color-primary-700;
-    &:is(:hover, :focus) {
-      background-color: $color-accent-200;
-    }
-  }
+
   &[data-type="link"] {
-    color: $color-primary-400;
+    padding: 0;
+    color: $color-neutral-800;
     &:is(:hover, :focus) {
-      background-color: $color-neutral-200;
+      text-decoration: underline;
     }
   }
 }

@@ -1,3 +1,4 @@
+import { GenreType } from "../store/genre-slice";
 import useData from "./useData";
 
 export type Game = {
@@ -12,8 +13,8 @@ export type Game = {
   }[];
 };
 
-const useGames = () => {
-  return useData<Game>("/games");
+const useGames = (genreId: GenreType) => {
+  return useData<Game>("/games", genreId);
 };
 
 export default useGames;
