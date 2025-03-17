@@ -8,8 +8,8 @@ type Props = {
 };
 
 const GameGrid = ({ className }: Props) => {
-  const selector = useAppSelector((state) => state);
-  const { data, error, loading } = useGames(selector.genreId);
+  const genreId = useAppSelector((state) => state.genreId);
+  const { data, error, loading } = useGames(genreId);
 
   const skeletonCards: number[] = new Array(8).fill(0).map((_, i) => i + 1);
 

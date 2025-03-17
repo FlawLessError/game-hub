@@ -27,7 +27,8 @@ const ColorModeSwitch = () => {
         className="visibility-hidden"
         type="checkbox"
         aria-labelledby="switch-title"
-        defaultChecked={ctx?.theme === "dark"}
+        checked={ctx?.theme === "dark"}
+        readOnly
         onClick={switchHandler}
       />
       <span

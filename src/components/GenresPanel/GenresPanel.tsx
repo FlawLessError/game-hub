@@ -4,7 +4,7 @@ import useGenres from "../../hooks/useGerners";
 import imageCrop from "../../services/image-crop";
 import GenresPanelSkeleton from "./GenresPanelSkeleton";
 import Button from "../UI/Button";
-import { useAppDispatch } from "../../store/hooks";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { changeGenre } from "../../store/genre-slice";
 
 type Props = {
@@ -14,6 +14,7 @@ type Props = {
 const GenresPanel = ({ className }: Props) => {
   const { data, error, loading } = useGenres();
   const dispatch = useAppDispatch();
+  const genreId = useAppSelector((state) => state.genreId);
 
   if (error) return null;
   if (loading) return <GenresPanelSkeleton className={className} />;
@@ -25,7 +26,7 @@ const GenresPanel = ({ className }: Props) => {
           <li key={genre.id} className={styles.genre}>
             <Button
               data-type="link"
-              className={styles.title}
+              className={`${styles.title} ${genreId === genre.id && styles.scaleUp}`}
               onClick={() => dispatch(changeGenre(genre.id))}
             >
               <img
