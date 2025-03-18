@@ -4,11 +4,11 @@
   position: sticky;
   top: 2rem;
   background-color: $color-neutral-100;
-  box-shadow: $box-shadow;
   padding: $card-body-padding;
   border-radius: $border-radius-1;
   max-height: calc(100vh - 4rem);
   overflow-y: auto;
+  box-shadow: $box-shadow;
 
   .genre {
     button {

@@ -17,8 +17,9 @@
     height: $size-6;
     border: 0;
     border-radius: $border-radius-1;
-    box-shadow: $box-shadow;
     background-color: $color-neutral-800;
+
+    @include box-shadow(before);
 
     &::after {
       position: absolute;
@@ -29,6 +30,10 @@
       border-radius: $border-radius-1;
       transition: 200ms ease;
     }
+  }
+
+  input:focus + .switchButton {
+    @include focus-visible();
   }
 
   input:checked + .switchButton::after {

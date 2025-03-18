@@ -6,8 +6,8 @@
   flex-direction: column;
   border-radius: $border-radius-1;
   background-color: $color-neutral-200;
-  box-shadow: 0.2rem 0.2rem 0.5rem rgb(black, 0.3);
   overflow: hidden;
+  @include box-shadow();
 
   & > * {
     flex-basis: 100%;
