@@ -1,6 +1,7 @@
 import styles from "./PlatformsIcons.module.scss";
 
 import { FaWindows } from "react-icons/fa";
+import { FaEarthAfrica } from "react-icons/fa6";
 import { FaPlaystation } from "react-icons/fa";
 import { FaXbox } from "react-icons/fa";
 import { FaApple } from "react-icons/fa";
@@ -17,6 +18,7 @@ type Props = {
 const PlatformsIcons = ({ platforms }: Props) => {
   const icon: { [key: string]: ReactNode } = {
     pc: <FaWindows />,
+    web: <FaEarthAfrica />,
     playstation: <FaPlaystation />,
     xbox: <FaXbox />,
     mac: <FaApple />,

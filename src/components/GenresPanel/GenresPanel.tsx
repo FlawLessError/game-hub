@@ -14,7 +14,7 @@ type Props = {
 const GenresPanel = ({ className }: Props) => {
   const { data, error, loading } = useGenres();
   const dispatch = useAppDispatch();
-  const genreId = useAppSelector((state) => state.genreId);
+  const genreId = useAppSelector((state) => state.genre.genreId);
 
   if (error) return null;
   if (loading) return <GenresPanelSkeleton className={className} />;

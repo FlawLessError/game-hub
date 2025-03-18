@@ -1,4 +1,5 @@
 import { GenreType } from "../store/genre-slice";
+import { PlatformType } from "../store/platform-slice";
 import useData from "./useData";
 
 export type Game = {
@@ -13,8 +14,8 @@ export type Game = {
   }[];
 };
 
-const useGames = (genreId: GenreType) => {
-  return useData<Game>("/games", genreId);
+const useGames = (genreId: GenreType, platformId: PlatformType) => {
+  return useData<Game>("/games", genreId, platformId);
 };
 
 export default useGames;

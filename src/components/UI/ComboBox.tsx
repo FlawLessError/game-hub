@@ -5,12 +5,18 @@ import { CSSTransition } from "react-transition-group";
 
 import { useEffect, useRef, useState } from "react";
 
-type Props = {
+type Props<T> = {
   title: string;
-  items: unknown[];
+  items: T[];
+  onSelectItem: (item: T) => void;
 };
 
-const ComboBox = (props: Props) => {
+type Type = {
+  id: number;
+  name: string;
+};
+
+const ComboBox = <T extends Type>(props: Props<T>) => {
   const [title, setTitle] = useState(props.title);
   const [itemsVisible, setItemsVisible] = useState(false);
   const nodeRef = useRef<HTMLUListElement>(null);
@@ -24,9 +30,10 @@ const ComboBox = (props: Props) => {
       setItemsVisible(true);
     }
   };
-  const handleChangeItem = (item: string) => {
-    setTitle(item);
+  const handleChangeItem = (item: T) => {
+    setTitle(item.name);
     setItemsVisible(false);
+    props.onSelectItem(item);
   };
 
   useEffect(() => {
@@ -90,10 +97,10 @@ const ComboBox = (props: Props) => {
             <li
               tabIndex={0}
               className="item"
-              key={item}
+              key={item.id}
               onClick={() => handleChangeItem(item)}
             >
-              {item}
+              {item.name}
             </li>
           ))}
         </ul>

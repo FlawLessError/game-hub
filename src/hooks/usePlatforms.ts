@@ -1,6 +1,6 @@
 import useData from "./useData";
 
-type Platforms = {
+export type Platforms = {
   id: number;
   name: string;
   slug: string;

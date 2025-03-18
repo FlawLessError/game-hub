@@ -5,6 +5,7 @@ export type GenreType = number | null;
 type initialStateTypes = {
   genreId: GenreType;
 };
+
 const initialState: initialStateTypes = {
   genreId: null,
 };
