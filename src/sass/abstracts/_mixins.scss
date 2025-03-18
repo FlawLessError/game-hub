@@ -87,3 +87,16 @@
   );
   background-size: 500%;
 }
+
+@mixin flashAnimation {
+  @keyframes flash {
+    0% {
+      @include setBg();
+      background-position-x: -50%;
+    }
+    100% {
+      @include setBg();
+      background-position-x: -250%;
+    }
+  }
+}

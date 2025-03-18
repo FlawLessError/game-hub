@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from "react";
 
 type Props = {
   title: string;
-  items: string[];
+  items: unknown[];
 };
 
 const ComboBox = (props: Props) => {

@@ -1,0 +1,12 @@
+@use "../../sass/abstracts/" as *;
+
+.skeleton {
+  display: block;
+  width: 100%;
+  min-height: inherit;
+  border-radius: $border-radius-1;
+
+  animation: $animate;
+}
+
+@include flashAnimation();

@@ -17,25 +17,16 @@
       width: 6rem;
       height: 3rem;
       border-radius: $border-radius-1;
-      animation: flash 3s infinite linear;
+      animation: $animate;
     }
 
     .title {
       width: 100%;
       min-height: 1rem;
       border-radius: calc($border-radius-1 / 2);
-      animation: flash 3s infinite linear;
+      animation: $animate;
     }
   }
 }
 
-@keyframes flash {
-  0% {
-    @include setBg();
-    background-position-x: -50%;
-  }
-  100% {
-    @include setBg();
-    background-position-x: -250%;
-  }
-}
+@include flashAnimation();
