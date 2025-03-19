@@ -1,26 +1,29 @@
 import styles from "./SortSelector.module.scss";
-import { Fragment } from "react/jsx-runtime";
 import ComboBox from "../UI/ComboBox";
-import FiltersSkeleton from "../FiltersSkeleton/FiltersSkeleton";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { changeGameQuery } from "../../store/gameQueries-slice";
 
-type ItemsType = { id: number; name: string };
+type ItemsType = { id: number; value: string; name: string };
 
 const SortSelector = () => {
+  const stateData = useAppSelector((state) => state.gameQueries);
+  const dispatch = useAppDispatch();
+
   const items: ItemsType[] = [
-    { id: 1, name: "Relevance" },
-    { id: 2, name: "Name" },
-    { id: 3, name: "Release Date" },
-    { id: 4, name: "Popularity" },
-    { id: 5, name: "Average Rating" },
+    { id: 1, value: "", name: "Relevance" },
+    { id: 2, value: "-added", name: "Date Added" },
+    { id: 3, value: "name", name: "Name" },
+    { id: 4, value: "-released", name: "Release Date" },
+    { id: 5, value: "-metacritic", name: "Popularity" },
+    { id: 6, value: "-rating", name: "Average Rating" },
   ];
 
   const onSelectItem = (e: ItemsType) => {
-    console.log(e);
+    dispatch(changeGameQuery({ ...stateData, sortOrder: e.value }));
   };
 
   return (
     <div className={styles.SortSelector}>
-      {/* <FiltersSkeleton /> */}
       <ComboBox<ItemsType>
         preFix="Order by: "
         title={"Relevance"}

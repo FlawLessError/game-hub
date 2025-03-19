@@ -2,16 +2,18 @@ import styles from "./PlatformSelect.module.scss";
 
 import usePlatforms, { Platforms } from "../../hooks/usePlatforms";
 import ComboBox from "../UI/ComboBox";
-import { useAppDispatch } from "../../store/hooks";
-import { changePlatform } from "../../store/platform-slice";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
+
 import FiltersSkeleton from "../FiltersSkeleton/FiltersSkeleton";
+import { changeGameQuery } from "../../store/gameQueries-slice";
 
 const PlatformSelect = () => {
   const { data, error, loading } = usePlatforms();
+  const stateData = useAppSelector((state) => state.gameQueries);
   const dispatch = useAppDispatch();
 
   const onSelectItem = (item: Platforms) => {
-    dispatch(changePlatform(item.id));
+    dispatch(changeGameQuery({ ...stateData, platformId: item.id }));
   };
 
   if (error) return null;

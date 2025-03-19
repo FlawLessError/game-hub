@@ -1,4 +1,6 @@
 const imageCrop = (imageLink: string) => {
+  if (!imageLink) return null;
+
   const pos = "media/";
   const target = imageLink.indexOf(pos);
   const img = imageLink.slice(target + pos.length);

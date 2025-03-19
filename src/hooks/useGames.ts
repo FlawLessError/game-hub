@@ -14,10 +14,9 @@ export type Game = {
 };
 
 const useGames = () => {
-  const genreId = useAppSelector((state) => state.genre.genreId);
-  const platformId = useAppSelector((state) => state.platform.platformId);
+  const gameQueries = useAppSelector((state) => state.gameQueries);
 
-  return useData<Game>("/games", genreId, platformId);
+  return useData<Game>("/games", gameQueries);
 };
 
 export default useGames;

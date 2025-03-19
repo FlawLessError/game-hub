@@ -1,19 +1,15 @@
 import { useEffect, useState } from "react";
 import apiClient from "../services/api-client";
 import { CanceledError } from "axios";
-import { GenreType } from "../store/genre-slice";
-import { PlatformType } from "../store/platform-slice";
+import { GameQueriesTypes } from "../store/gameQueries-slice";
 
 type FetchedData<T> = {
   count: number;
   results: T[];
 };
 
-const useData = <T>(
-  endPoint: string,
-  genreId?: GenreType,
-  platformId?: PlatformType,
-) => {
+const useData = <T>(endPoint: string, gameQueries?: GameQueriesTypes) => {
+  console.log(gameQueries);
   const [data, setData] = useState<T[]>([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -25,7 +21,11 @@ const useData = <T>(
     apiClient
       .get<FetchedData<T>>(endPoint, {
         signal: controller.signal,
-        params: { genres: genreId, parent_platforms: platformId },
+        params: {
+          genres: gameQueries?.genreId,
+          parent_platforms: gameQueries?.platformId,
+          ordering: gameQueries?.sortOrder,
+        },
       })
       .then((res) => {
         setData(res.data.results);
@@ -40,7 +40,7 @@ const useData = <T>(
     return () => {
       controller.abort();
     };
-  }, [endPoint, genreId, platformId]);
+  }, [endPoint, gameQueries]);
 
   return { data, setData, error, setError, loading, setLoading };
 };

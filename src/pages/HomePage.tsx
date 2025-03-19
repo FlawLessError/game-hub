@@ -1,7 +1,8 @@
+import styles from "./HomePage.module.scss";
+
 import GameGrid from "../components/GameGrid/GameGrid";
 import GenresPanel from "../components/GenresPanel/GenresPanel";
 import NavBar from "../components/NavBar/NavBar";
-import styles from "./HomePage.module.scss";
 
 export default function HomePage() {
   return (

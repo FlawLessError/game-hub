@@ -22,7 +22,7 @@ const GameGrid = ({ className }: Props) => {
         <SortSelector />
       </div>
       {error && <p>{error}</p>}
-      <ul className="auto-fit-columns">
+      <ul className="auto-fill-columns">
         {loading &&
           skeletonCards.map((skel) => (
             <li key={skel}>

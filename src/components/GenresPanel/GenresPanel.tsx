@@ -5,7 +5,7 @@ import imageCrop from "../../services/image-crop";
 import GenresPanelSkeleton from "./GenresPanelSkeleton";
 import Button from "../UI/Button";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { changeGenre } from "../../store/genre-slice";
+import { changeGameQuery } from "../../store/gameQueries-slice";
 
 type Props = {
   className: string;
@@ -13,8 +13,12 @@ type Props = {
 
 const GenresPanel = ({ className }: Props) => {
   const { data, error, loading } = useGenres();
+  const stateData = useAppSelector((state) => state.gameQueries);
   const dispatch = useAppDispatch();
-  const genreId = useAppSelector((state) => state.genre.genreId);
+
+  const handleChangeGenre = (id: number) => {
+    dispatch(changeGameQuery({ ...stateData, genreId: id }));
+  };
 
   if (error) return null;
   if (loading) return <GenresPanelSkeleton className={className} />;
@@ -26,8 +30,8 @@ const GenresPanel = ({ className }: Props) => {
           <li key={genre.id} className={styles.genre}>
             <Button
               data-type="link"
-              className={`${styles.title} ${genreId === genre.id && styles.scaleUp}`}
-              onClick={() => dispatch(changeGenre(genre.id))}
+              className={`${styles.title} ${stateData.genreId === genre.id && styles.scaleUp}`}
+              onClick={() => handleChangeGenre(genre.id)}
             >
               <img
                 src={imageCrop(genre.image_background)}
