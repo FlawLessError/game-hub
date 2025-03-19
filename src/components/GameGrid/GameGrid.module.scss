@@ -1,0 +1,6 @@
+@use "../../sass/abstracts/" as *;
+
+.filters {
+  display: flex;
+  gap: $flex-gap;
+}

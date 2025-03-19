@@ -1,7 +1,7 @@
 @use "../../sass/abstracts/" as *;
 
 .skeleton {
-  display: block;
+  display: inline-block;
   width: 100%;
   min-height: inherit;
   border-radius: $border-radius-1;

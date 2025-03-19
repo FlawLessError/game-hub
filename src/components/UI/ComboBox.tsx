@@ -6,6 +6,7 @@ import { CSSTransition } from "react-transition-group";
 import { useEffect, useRef, useState } from "react";
 
 type Props<T> = {
+  preFix?: string;
   title: string;
   items: T[];
   onSelectItem: (item: T) => void;
@@ -38,7 +39,7 @@ const ComboBox = <T extends Type>(props: Props<T>) => {
 
   useEffect(() => {
     const ClickAway = (e: MouseEvent) => {
-      if (e.target !== btnRef.current) {
+      if (!btnRef.current?.contains(e.target as Node)) {
         setItemsVisible(false);
       }
     };
@@ -74,7 +75,10 @@ const ComboBox = <T extends Type>(props: Props<T>) => {
         aria-expanded={itemsVisible}
         onClick={handleClickedButton}
       >
-        <span id="comboBoxTitle">{title}</span>
+        <span id="comboBoxTitle">
+          {props.preFix || ""}
+          {title}
+        </span>
         <span className={styles.icon} data-type={!itemsVisible && "spinned"}>
           <RiArrowDropDownLine />
         </span>

@@ -1,5 +1,4 @@
-import { GenreType } from "../store/genre-slice";
-import { PlatformType } from "../store/platform-slice";
+import { useAppSelector } from "../store/hooks";
 import useData from "./useData";
 
 export type Game = {
@@ -14,7 +13,10 @@ export type Game = {
   }[];
 };
 
-const useGames = (genreId: GenreType, platformId: PlatformType) => {
+const useGames = () => {
+  const genreId = useAppSelector((state) => state.genre.genreId);
+  const platformId = useAppSelector((state) => state.platform.platformId);
+
   return useData<Game>("/games", genreId, platformId);
 };
 

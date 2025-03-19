@@ -1,23 +1,26 @@
+import styles from "./GameGrid.module.scss";
+
 import useGames from "../../hooks/useGames";
-import { useAppSelector } from "../../store/hooks";
 import GameCard from "../GameCard/GameCard";
 import GameCardSkeleton from "../GameCardSkeleton/GameCardSkeleton";
 import PlatformSelect from "../PlatformSelect/PlatformSelect";
+import SortSelector from "../SortSelector/SortSelector";
 
 type Props = {
   className: string;
 };
 
 const GameGrid = ({ className }: Props) => {
-  const genreId = useAppSelector((state) => state.genre.genreId);
-  const platformId = useAppSelector((state) => state.platform.platformId);
-  const { data, error, loading } = useGames(genreId, platformId);
+  const { data, error, loading } = useGames();
 
   const skeletonCards: number[] = new Array(8).fill(0).map((_, i) => i + 1);
 
   return (
     <main className={`${className} flow-content`}>
-      <PlatformSelect />
+      <div className={styles.filters}>
+        <PlatformSelect />
+        <SortSelector />
+      </div>
       {error && <p>{error}</p>}
       <ul className="auto-fit-columns">
         {loading &&

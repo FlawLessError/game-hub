@@ -24,6 +24,10 @@
 
     @include box-shadow();
 
+    & > * {
+      user-select: none;
+    }
+
     .icon {
       font-size: $fs-700;
       transition: 200ms ease-in-out;
@@ -39,8 +43,9 @@
     background-color: $color-neutral-200;
     border: 1px solid $color-neutral-800;
     border-radius: $border-radius-1;
-    max-height: fit-content;
-    overflow: hidden;
+    max-height: 20rem;
+    overflow-y: auto;
+    overflow-x: hidden;
     & > * {
       padding: 0.5rem 1rem;
       cursor: pointer;
