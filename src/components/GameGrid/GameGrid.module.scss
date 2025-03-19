@@ -2,5 +2,10 @@
 
 .filters {
   display: flex;
+  flex-direction: column;
   gap: $flex-gap;
+
+  @include mq(sm) {
+    flex-direction: row;
+  }
 }
