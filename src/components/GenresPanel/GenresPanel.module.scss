@@ -1,18 +1,16 @@
 @use "../../sass/abstracts/" as *;
 
+.heading {
+  @include heading($fs-700);
+}
 .panel {
   position: sticky;
   top: 2rem;
   background-color: $color-neutral-100;
-  padding: $card-body-padding;
-  border-radius: $border-radius-1;
-  max-height: calc(100vh - 4rem);
+  border-right: 2px solid $color-neutral-800;
+  max-height: calc(100vh - 11rem);
   overflow-y: auto;
   box-shadow: $box-shadow;
-
-  .heading {
-    @include heading($fs-700);
-  }
 
   .genre {
     button {

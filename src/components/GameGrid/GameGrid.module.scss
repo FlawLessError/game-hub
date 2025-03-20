@@ -9,3 +9,9 @@
     flex-direction: row;
   }
 }
+
+.error {
+  margin-block: auto;
+  text-align: center;
+  @include heading($fs-800);
+}

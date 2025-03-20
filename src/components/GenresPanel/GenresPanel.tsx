@@ -24,26 +24,28 @@ const GenresPanel = ({ className }: Props) => {
   if (loading) return <GenresPanelSkeleton className={className} />;
 
   return (
-    <aside className={`flow-content ${className} ${styles.panel}`}>
+    <aside className={`flow-content ${className}`}>
       <h2 className={styles.heading}>Genres</h2>
-      <ul className="flow-content">
-        {data.map((genre) => (
-          <li key={genre.id} className={styles.genre}>
-            <Button
-              data-type="link"
-              className={`${styles.title} ${stateData.genre?.id === genre.id && styles.scaleUp}`}
-              onClick={() => handleChangeGenre(genre)}
-            >
-              <img
-                src={imageCrop(genre.image_background)}
-                alt=""
-                aria-hidden="true"
-              />
-              {genre.name}
-            </Button>
-          </li>
-        ))}
-      </ul>
+      <div className={styles.panel}>
+        <ul className="flow-content">
+          {data.map((genre) => (
+            <li key={genre.id} className={styles.genre}>
+              <Button
+                data-type="link"
+                className={`${styles.title} ${stateData.genre?.id === genre.id && styles.scaleUp}`}
+                onClick={() => handleChangeGenre(genre)}
+              >
+                <img
+                  src={imageCrop(genre.image_background)}
+                  alt=""
+                  aria-hidden="true"
+                />
+                {genre.name}
+              </Button>
+            </li>
+          ))}
+        </ul>
+      </div>
     </aside>
   );
 };

@@ -16,6 +16,8 @@ const GameGrid = ({ className }: Props) => {
 
   const skeletonCards: number[] = new Array(8).fill(0).map((_, i) => i + 1);
 
+  if (error) return <h1 className={styles.error}>{error}</h1>;
+
   return (
     <main className={`${className} flow-content`}>
       <DynamicHeading />
@@ -23,7 +25,6 @@ const GameGrid = ({ className }: Props) => {
         <PlatformSelect />
         <SortSelector />
       </div>
-      {error && <p>{error}</p>}
       <ul className="auto-fill-columns">
         {loading &&
           skeletonCards.map((skel) => (
