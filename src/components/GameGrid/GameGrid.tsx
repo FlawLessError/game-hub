@@ -5,6 +5,7 @@ import GameCard from "../GameCard/GameCard";
 import GameCardSkeleton from "../GameCardSkeleton/GameCardSkeleton";
 import PlatformSelect from "../PlatformSelect/PlatformSelect";
 import SortSelector from "../SortSelector/SortSelector";
+import DynamicHeading from "../DynamicHeading/DynamicHeading";
 
 type Props = {
   className: string;
@@ -17,6 +18,7 @@ const GameGrid = ({ className }: Props) => {
 
   return (
     <main className={`${className} flow-content`}>
+      <DynamicHeading />
       <div className={styles.filters}>
         <PlatformSelect />
         <SortSelector />

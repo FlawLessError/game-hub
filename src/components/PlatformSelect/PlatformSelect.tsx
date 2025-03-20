@@ -13,7 +13,7 @@ const PlatformSelect = () => {
   const dispatch = useAppDispatch();
 
   const onSelectItem = (item: Platforms) => {
-    dispatch(changeGameQuery({ ...stateData, platformId: item.id }));
+    dispatch(changeGameQuery({ ...stateData, platform: item }));
   };
 
   if (error) return null;

@@ -21,8 +21,8 @@ const useData = <T>(endPoint: string, gameQueries?: GameQueriesTypes) => {
       .get<FetchedData<T>>(endPoint, {
         signal: controller.signal,
         params: {
-          genres: gameQueries?.genreId,
-          parent_platforms: gameQueries?.platformId,
+          genres: gameQueries?.genre?.id,
+          parent_platforms: gameQueries?.platform?.id,
           ordering: gameQueries?.sortOrder,
           search: gameQueries?.searchQuery,
         },
