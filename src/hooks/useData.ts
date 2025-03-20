@@ -9,7 +9,6 @@ type FetchedData<T> = {
 };
 
 const useData = <T>(endPoint: string, gameQueries?: GameQueriesTypes) => {
-  console.log(gameQueries);
   const [data, setData] = useState<T[]>([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -25,6 +24,7 @@ const useData = <T>(endPoint: string, gameQueries?: GameQueriesTypes) => {
           genres: gameQueries?.genreId,
           parent_platforms: gameQueries?.platformId,
           ordering: gameQueries?.sortOrder,
+          search: gameQueries?.searchQuery,
         },
       })
       .then((res) => {

@@ -1,5 +1,5 @@
 const imageCrop = (imageLink: string) => {
-  if (!imageLink) return null;
+  if (!imageLink) return "";
 
   const pos = "media/";
   const target = imageLink.indexOf(pos);
