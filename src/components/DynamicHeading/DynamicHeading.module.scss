@@ -1,0 +1,5 @@
+@use "../../sass/abstracts/" as *;
+
+.heading {
+  @include heading($fs-800);
+}
