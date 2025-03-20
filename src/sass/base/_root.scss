@@ -19,14 +19,19 @@
 
   @each $size-name, $size-map in $font-sizes {
     @if ($size-name == sm) {
-      @each $size, $value in $size-map {
-        --fs-#{$size}: #{$value};
-      }
-    }
-    @if ($size-name != sm) {
-      @include mq($size-name) {
+      & {
         @each $size, $value in $size-map {
           --fs-#{$size}: #{$value};
+        }
+      }
+    }
+
+    @if ($size-name != sm) {
+      @include mq($size-name) {
+        & {
+          @each $size, $value in $size-map {
+            --fs-#{$size}: #{$value};
+          }
         }
       }
     }
