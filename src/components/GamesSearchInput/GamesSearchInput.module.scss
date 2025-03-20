@@ -1,0 +1,43 @@
+@use "../../sass/abstracts/" as *;
+
+.searchContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  .icon {
+    user-select: none;
+    position: absolute;
+    left: 0.7rem;
+    color: $color-neutral-600;
+  }
+
+  .search {
+    background-color: $color-neutral-200;
+    color: $color-neutral-600;
+    font-size: $fs-500;
+    border: 2px solid $color-neutral-600;
+    border-radius: $border-radios-round;
+    padding: $inputs-padding;
+    padding-left: 2rem;
+    min-width: 0;
+    width: 100%;
+
+    @include box-shadow();
+
+    &::placeholder {
+      color: $color-neutral-600;
+    }
+  }
+
+  .icon,
+  .search {
+    transition: 200ms ease-in-out;
+  }
+
+  .search:is(:focus),
+  .search:is(:focus) + .icon {
+    color: $color-neutral-800;
+  }
+}

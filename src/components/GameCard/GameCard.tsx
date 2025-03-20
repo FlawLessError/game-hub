@@ -13,7 +13,11 @@ type Props = {
 const GameCard = ({ game }: Props) => {
   return (
     <div className={styles.gameCard}>
-      <img src={imageCrop(game.background_image)} alt="" />
+      {imageCrop(game.background_image) ? (
+        <img src={imageCrop(game.background_image)!} alt="" />
+      ) : (
+        <div className={styles.img}></div>
+      )}
       <div className={`${styles.info} flow-content`}>
         <div className={styles.platforms_metric}>
           <PlatformsIcons

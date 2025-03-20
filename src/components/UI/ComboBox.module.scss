@@ -19,7 +19,7 @@
     border-radius: $border-radius-1;
     color: $color-neutral-800;
     background-color: $color-neutral-200;
-    padding: 0.5rem 1rem;
+    padding: $inputs-padding;
 
     @include box-shadow();
 

@@ -1,10 +1,11 @@
 import styles from "./NavBar.module.scss";
 
+import { ComponentPropsWithoutRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { NavHashLink } from "react-router-hash-link";
 import Logo from "../../assets/Logo.svg";
-import { ComponentPropsWithoutRef } from "react";
 import ColorModeSwitch from "../ColorModeSwitch/ColorModeSwitch";
-import { useNavigate } from "react-router-dom";
+import GamesSearchInput from "../GamesSearchInput/GamesSearchInput";
 
 type Props = {
   className?: string;
@@ -18,6 +19,7 @@ const NavBar = (props: Props) => {
       <NavHashLink to="/#" onClick={() => navigate(0)} className={styles.logo}>
         <img src={Logo} alt="game hub logo" />
       </NavHashLink>
+      <GamesSearchInput />
       <ColorModeSwitch />
     </header>
   );

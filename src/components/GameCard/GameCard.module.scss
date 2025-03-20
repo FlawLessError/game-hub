@@ -21,6 +21,10 @@
     object-fit: cover;
     object-position: top;
   }
+  .img {
+    background-color: red;
+    height: 100%;
+  }
 
   .info {
     padding: $card-body-padding;
