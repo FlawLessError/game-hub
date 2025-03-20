@@ -26,7 +26,7 @@ const GameGrid = ({ className }: Props) => {
         <SortSelector />
       </div>
       <ul className={`auto-fill-columns ${styles.ul}`}>
-        {!loading &&
+        {loading &&
           skeletonCards.map((skel) => (
             <li key={skel}>
               <GameCardSkeleton />
