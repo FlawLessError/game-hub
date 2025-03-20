@@ -23,8 +23,7 @@
     padding-left: 2rem;
     min-width: 0;
     width: 100%;
-
-    @include box-shadow();
+    box-shadow: $box-shadow;
 
     &::placeholder {
       color: $color-neutral-600;

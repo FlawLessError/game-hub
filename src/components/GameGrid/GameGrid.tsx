@@ -1,11 +1,11 @@
 import styles from "./GameGrid.module.scss";
 
 import useGames from "../../hooks/useGames";
+import DynamicHeading from "../DynamicHeading/DynamicHeading";
 import GameCard from "../GameCard/GameCard";
 import GameCardSkeleton from "../GameCardSkeleton/GameCardSkeleton";
 import PlatformSelect from "../PlatformSelect/PlatformSelect";
 import SortSelector from "../SortSelector/SortSelector";
-import DynamicHeading from "../DynamicHeading/DynamicHeading";
 
 type Props = {
   className: string;
@@ -25,8 +25,8 @@ const GameGrid = ({ className }: Props) => {
         <PlatformSelect />
         <SortSelector />
       </div>
-      <ul className="auto-fill-columns">
-        {loading &&
+      <ul className={`auto-fill-columns ${styles.ul}`}>
+        {!loading &&
           skeletonCards.map((skel) => (
             <li key={skel}>
               <GameCardSkeleton />
