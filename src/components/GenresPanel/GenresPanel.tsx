@@ -24,7 +24,8 @@ const GenresPanel = ({ className }: Props) => {
   if (loading) return <GenresPanelSkeleton className={className} />;
 
   return (
-    <aside className={`${className} ${styles.panel}`}>
+    <aside className={`flow-content ${className} ${styles.panel}`}>
+      <h2 className={styles.heading}>Genres</h2>
       <ul className="flow-content">
         {data.map((genre) => (
           <li key={genre.id} className={styles.genre}>

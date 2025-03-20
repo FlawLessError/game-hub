@@ -10,6 +10,10 @@
   overflow-y: auto;
   box-shadow: $box-shadow;
 
+  .heading {
+    @include heading($fs-700);
+  }
+
   .genre {
     button {
       display: flex;
