@@ -11,11 +11,11 @@
   transition: 250ms ease-out;
 
   &[data-type="primary"] {
-    background-color: $color-neutral-400;
-    color: $color-neutral-100;
+    background-color: $color-neutral-200;
+    color: $color-neutral-700;
     &:is(:hover, :focus) {
-      background-color: $color-neutral-100;
-      color: $color-neutral-400;
+      background-color: $color-neutral-700;
+      color: $color-neutral-200;
     }
   }
 

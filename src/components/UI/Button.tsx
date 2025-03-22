@@ -1,8 +1,8 @@
 import styles from "./Button.module.scss";
 
-import { ComponentPropsWithoutRef } from "react";
+import { ComponentPropsWithRef } from "react";
 
-type ButtonProps = { className: string } & ComponentPropsWithoutRef<"button">;
+type ButtonProps = { className: string } & ComponentPropsWithRef<"button">;
 
 const Button = (props: ButtonProps) => {
   const { className, ...rest } = props;
