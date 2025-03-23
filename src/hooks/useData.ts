@@ -3,7 +3,7 @@ import apiClient from "../services/api-client";
 import { CanceledError } from "axios";
 import { GameQueriesTypes } from "../store/gameQueries-slice";
 
-type FetchedData<T> = {
+export type FetchedData<T> = {
   count: number;
   results: T[];
 };

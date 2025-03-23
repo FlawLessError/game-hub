@@ -8,7 +8,7 @@ import FiltersSkeleton from "../FiltersSkeleton/FiltersSkeleton";
 import { changeGameQuery } from "../../store/gameQueries-slice";
 
 const PlatformSelect = () => {
-  const { data, error, loading } = usePlatforms();
+  const { data, error, isLoading } = usePlatforms();
   const stateData = useAppSelector((state) => state.gameQueries);
   const dispatch = useAppDispatch();
 
@@ -19,11 +19,11 @@ const PlatformSelect = () => {
   if (error) return null;
   return (
     <div className={styles.platforms}>
-      {loading && <FiltersSkeleton />}
-      {!loading && (
+      {isLoading && <FiltersSkeleton />}
+      {!isLoading && (
         <ComboBox<Platforms>
           title={"Platforms"}
-          items={data.map((platform) => platform)}
+          items={data!.results.map((platform) => platform)}
           onSelectItem={onSelectItem}
         />
       )}

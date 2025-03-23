@@ -12,7 +12,7 @@ type Props = {
 };
 
 const GenresPanel = ({ className }: Props) => {
-  const { data, error, loading } = useGenres();
+  const { data, error, isLoading } = useGenres();
   const stateData = useAppSelector((state) => state.gameQueries);
   const dispatch = useAppDispatch();
 
@@ -21,14 +21,14 @@ const GenresPanel = ({ className }: Props) => {
   };
 
   if (error) return null;
-  if (loading) return <GenresPanelSkeleton className={className} />;
+  if (isLoading) return <GenresPanelSkeleton className={className} />;
 
   return (
     <aside className={`flow-content ${className}`}>
       <h2 className={styles.heading}>Genres</h2>
       <div className={styles.panel}>
         <ul className="flow-content">
-          {data.map((genre) => (
+          {data?.results.map((genre) => (
             <li key={genre.id} className={styles.genre}>
               <Button
                 data-type="link"

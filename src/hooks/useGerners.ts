@@ -1,4 +1,7 @@
-import useData from "./useData";
+import { useQuery } from "@tanstack/react-query";
+// import useData from "./useData";
+import apiClient from "../services/api-client";
+import { FetchedData } from "./useData";
 
 type Genres = {
   id: number;
@@ -7,7 +10,13 @@ type Genres = {
 };
 
 const useGenres = () => {
-  return useData<Genres>("/genres");
+  return useQuery({
+    queryKey: ["genres"],
+    queryFn: () =>
+      apiClient.get<FetchedData<Genres>>("/genres").then((res) => res.data),
+    staleTime: Infinity,
+    gcTime: 60 * 1000, // 1min
+  });
 };
 
 export default useGenres;
