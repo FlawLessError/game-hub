@@ -12,11 +12,11 @@ type Props = {
 };
 
 const GameGrid = ({ className }: Props) => {
-  const { data, error, loading } = useGames();
+  const { data, error, isLoading } = useGames();
 
   const skeletonCards: number[] = new Array(8).fill(0).map((_, i) => i + 1);
 
-  if (error) return <h1 className={styles.error}>{error}</h1>;
+  if (error) return <h1 className={styles.error}>{error.message}</h1>;
 
   return (
     <main className={`${className} flow-content`}>
@@ -26,14 +26,14 @@ const GameGrid = ({ className }: Props) => {
         <SortSelector />
       </div>
       <ul className={`auto-fill-columns`}>
-        {loading &&
+        {isLoading &&
           skeletonCards.map((skel) => (
             <li key={skel}>
               <GameCardSkeleton />
             </li>
           ))}
-        {!loading &&
-          data.map((game) => (
+        {!isLoading &&
+          data?.results.map((game) => (
             <li key={game.id}>
               <GameCard game={game} />
             </li>
