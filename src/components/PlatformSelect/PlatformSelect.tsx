@@ -1,6 +1,6 @@
 import styles from "./PlatformSelect.module.scss";
 
-import usePlatforms, { Platforms } from "../../hooks/usePlatforms";
+import usePlatform, { Platform } from "../../hooks/usePlatforms";
 import ComboBox from "../UI/ComboBox";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 
@@ -8,11 +8,11 @@ import FiltersSkeleton from "../FiltersSkeleton/FiltersSkeleton";
 import { changeGameQuery } from "../../store/gameQueries-slice";
 
 const PlatformSelect = () => {
-  const { data, error, isLoading } = usePlatforms();
+  const { data, error, isLoading } = usePlatform();
   const stateData = useAppSelector((state) => state.gameQueries);
   const dispatch = useAppDispatch();
 
-  const onSelectItem = (item: Platforms) => {
+  const onSelectItem = (item: Platform) => {
     dispatch(changeGameQuery({ ...stateData, platform: item }));
   };
 
@@ -21,8 +21,8 @@ const PlatformSelect = () => {
     <div className={styles.platforms}>
       {isLoading && <FiltersSkeleton />}
       {!isLoading && (
-        <ComboBox<Platforms>
-          title={"Platforms"}
+        <ComboBox<Platform>
+          title={"Platform"}
           items={data!.results.map((platform) => platform)}
           onSelectItem={onSelectItem}
         />
