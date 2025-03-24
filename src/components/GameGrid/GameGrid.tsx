@@ -51,6 +51,7 @@ const GameGrid = ({ className }: Props) => {
       </ul>
       {hasNextPage && (
         <Button
+          className={styles.LoadMore}
           data-type="primary"
           onClick={() => fetchNextPage()}
           disabled={isFetchingNextPage}

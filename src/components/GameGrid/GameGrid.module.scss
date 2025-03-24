@@ -15,3 +15,8 @@
   text-align: center;
   @include heading($fs-800);
 }
+
+.LoadMore {
+  display: block;
+  margin-inline: auto;
+}
