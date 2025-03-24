@@ -6,13 +6,38 @@ import GameCard from "../GameCard/GameCard";
 import GameCardSkeleton from "../GameCardSkeleton/GameCardSkeleton";
 import PlatformSelect from "../PlatformSelect/PlatformSelect";
 import SortSelector from "../SortSelector/SortSelector";
-import Button from "../UI/Button";
+import LoadMore from "../LoadMore/LoadMore";
+import { useEffect, useRef } from "react";
 
 type Props = {
   className: string;
 };
 
 const GameGrid = ({ className }: Props) => {
+  const mainRef = useRef<HTMLElement>(null);
+  const loadRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    const options = {
+      root: window.document,
+      rootMargin: "0px",
+      threshold: 0,
+    };
+
+    const intersectionCallback = (entries: IntersectionObserverEntry[]) => {
+      console.log(entries);
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const target = entry.target as HTMLButtonElement;
+          target.click();
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(intersectionCallback, options);
+    if (loadRef.current) observer.observe(loadRef.current);
+  }, [loadRef.current]);
+
   const {
     data,
     error,
@@ -27,7 +52,7 @@ const GameGrid = ({ className }: Props) => {
   if (error) return <h1 className={styles.error}>{error.message}</h1>;
 
   return (
-    <main className={`${className} flow-content`}>
+    <main ref={mainRef} className={`${className} flow-content`}>
       <DynamicHeading />
       <div className={styles.filters}>
         <PlatformSelect />
@@ -50,14 +75,13 @@ const GameGrid = ({ className }: Props) => {
           )}
       </ul>
       {hasNextPage && (
-        <Button
-          className={styles.LoadMore}
-          data-type="primary"
+        <LoadMore
+          ref={loadRef}
           onClick={() => fetchNextPage()}
           disabled={isFetchingNextPage}
         >
           {isFetchingNextPage ? "Loading..." : "Load More"}
-        </Button>
+        </LoadMore>
       )}
     </main>
   );
