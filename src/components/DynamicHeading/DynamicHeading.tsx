@@ -5,23 +5,23 @@ import styles from "./DynamicHeading.module.scss";
 
 const DynamicHeading = () => {
   const stateData = useAppSelector((state) => state.gameQueries);
-  const { data: dataG } = useGenres();
-  const genreName = dataG?.results.find(
-    (genre) => genre.id === stateData.genreId,
-  )?.name;
-  const { data: dataP } = usePlatform();
-  const platformName = dataP?.results.find(
+
+  const { data: genres } = useGenres();
+  const genre = genres?.results.find((genre) => genre.id === stateData.genreId);
+
+  const { data: platforms } = usePlatform();
+  const platform = platforms?.results.find(
     (platform) => platform.id === stateData.platformId,
-  )?.name;
+  );
 
   let title = "Games";
 
-  if (genreName && platformName) {
-    title = genreName + " Games for " + platformName;
-  } else if (platformName) {
-    title = "Games for " + platformName;
-  } else if (genreName) {
-    title = genreName + " Games";
+  if (genre?.name && platform?.name) {
+    title = genre.name + " Games for " + platform.name;
+  } else if (platform?.name) {
+    title = "Games for " + platform.name;
+  } else if (genre?.name) {
+    title = genre.name + " Games";
   }
 
   return <h1 className={styles.heading}>{title}</h1>;

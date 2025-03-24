@@ -13,7 +13,7 @@ const useGenres = () => {
   return useQuery({
     queryKey: ["genres"],
     queryFn: () => APIClient.getAll(),
-    staleTime: Infinity,
+    staleTime: 24 * 60 * 60 * 1000, // 24h
     gcTime: 60 * 1000, // 1min
   });
 };
