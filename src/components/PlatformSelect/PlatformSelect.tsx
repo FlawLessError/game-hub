@@ -5,15 +5,15 @@ import ComboBox from "../UI/ComboBox";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 
 import FiltersSkeleton from "../FiltersSkeleton/FiltersSkeleton";
-import { changeGameQuery } from "../../store/gameQueries-slice";
+import { changeGameQuery, PlatformType } from "../../store/gameQueries-slice";
 
 const PlatformSelect = () => {
   const { data, error, isLoading } = usePlatform();
   const stateData = useAppSelector((state) => state.gameQueries);
   const dispatch = useAppDispatch();
 
-  const onSelectItem = (item: Platform) => {
-    dispatch(changeGameQuery({ ...stateData, platform: item }));
+  const onSelectItem = (platformId: PlatformType) => {
+    dispatch(changeGameQuery({ ...stateData, platformId }));
   };
 
   if (error) return null;

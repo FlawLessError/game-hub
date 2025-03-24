@@ -1,23 +1,20 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-export type GenreType = { id: number; name: string } | null;
-export type PlatformType = {
-  id: number;
-  name: string;
-} | null;
+export type GenreType = number;
+export type PlatformType = number;
 export type SortOrderType = string;
 export type SearchQueryType = string;
 
 export type GameQueriesTypes = {
-  genre: GenreType;
-  platform: PlatformType;
+  genreId?: GenreType;
+  platformId?: PlatformType;
   sortOrder: SortOrderType;
   searchQuery: SearchQueryType;
 };
 
 const initialState: GameQueriesTypes = {
-  genre: null,
-  platform: null,
+  genreId: undefined,
+  platformId: undefined,
   sortOrder: "",
   searchQuery: "",
 };

@@ -16,8 +16,8 @@ const GenresPanel = ({ className }: Props) => {
   const stateData = useAppSelector((state) => state.gameQueries);
   const dispatch = useAppDispatch();
 
-  const handleChangeGenre = (genre: GenreType) => {
-    dispatch(changeGameQuery({ ...stateData, genre }));
+  const handleChangeGenre = (genreId: GenreType) => {
+    dispatch(changeGameQuery({ ...stateData, genreId }));
   };
 
   if (error) return null;
@@ -32,8 +32,8 @@ const GenresPanel = ({ className }: Props) => {
             <li key={genre.id} className={styles.genre}>
               <Button
                 data-type="link"
-                className={`${styles.title} ${stateData.genre?.id === genre.id && styles.scaleUp}`}
-                onClick={() => handleChangeGenre(genre)}
+                className={`${styles.title} ${stateData.genreId === genre.id && styles.scaleUp}`}
+                onClick={() => handleChangeGenre(genre.id)}
               >
                 <img
                   src={imageCrop(genre.image_background)}

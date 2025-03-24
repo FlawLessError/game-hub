@@ -18,8 +18,13 @@ const SortSelector = () => {
     { id: 6, value: "-rating", name: "Average Rating" },
   ];
 
-  const onSelectItem = (e: ItemsType) => {
-    dispatch(changeGameQuery({ ...stateData, sortOrder: e.value }));
+  const onSelectItem = (id: number) => {
+    dispatch(
+      changeGameQuery({
+        ...stateData,
+        sortOrder: items.find((item) => item.id === id)?.value || "",
+      }),
+    );
   };
 
   return (

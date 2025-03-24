@@ -36,6 +36,9 @@ const GameGrid = ({ className }: Props) => {
 
     const observer = new IntersectionObserver(intersectionCallback, options);
     if (loadRef.current) observer.observe(loadRef.current);
+
+    // NOTE: It does rerender.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loadRef.current]);
 
   const {

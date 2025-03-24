@@ -24,8 +24,8 @@ const useGames = () => {
     queryFn: ({ pageParam }) =>
       APIClient.getAll({
         params: {
-          genres: gameQueries?.genre?.id,
-          parent_platforms: gameQueries?.platform?.id,
+          genres: gameQueries?.genreId,
+          parent_platforms: gameQueries?.platformId,
           ordering: gameQueries?.sortOrder,
           search: gameQueries?.searchQuery,
           page: pageParam,

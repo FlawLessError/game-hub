@@ -9,7 +9,7 @@ type Props<T> = {
   preFix?: string;
   title: string;
   items: T[];
-  onSelectItem: (item: T) => void;
+  onSelectItem: (itemId: number) => void;
 };
 
 type Type = {
@@ -34,7 +34,7 @@ const ComboBox = <T extends Type>(props: Props<T>) => {
   const handleChangeItem = (item: T) => {
     setTitle(item.name);
     setItemsVisible(false);
-    props.onSelectItem(item);
+    props.onSelectItem(item.id);
   };
 
   useEffect(() => {
