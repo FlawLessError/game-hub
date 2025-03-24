@@ -2,7 +2,7 @@ import styles from "./Button.module.scss";
 
 import { ComponentPropsWithRef } from "react";
 
-type ButtonProps = { className: string } & ComponentPropsWithRef<"button">;
+type ButtonProps = { className?: string } & ComponentPropsWithRef<"button">;
 
 const Button = (props: ButtonProps) => {
   const { className, ...rest } = props;

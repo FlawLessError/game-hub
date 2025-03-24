@@ -26,4 +26,8 @@
       text-decoration: underline;
     }
   }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
 }
