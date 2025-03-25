@@ -5,7 +5,9 @@ type ThemeContextValues = {
   setTheme: (theme: string) => void;
 };
 
-export const ThemeContext = createContext<ThemeContextValues | null>(null);
+export const ThemeContext = createContext<ThemeContextValues>(
+  {} as ThemeContextValues,
+);
 
 type Props = {
   children: ReactNode;

@@ -1,12 +1,11 @@
-import styles from "./SortSelector.module.scss";
+import { changeSortOrder } from "../../store/gameQueries-slice";
+import { useAppDispatch } from "../../store/hooks";
 import ComboBox from "../UI/ComboBox";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { changeGameQuery } from "../../store/gameQueries-slice";
+import styles from "./SortSelector.module.scss";
 
 type ItemsType = { id: number; value: string; name: string };
 
 const SortSelector = () => {
-  const stateData = useAppSelector((state) => state.gameQueries);
   const dispatch = useAppDispatch();
 
   const items: ItemsType[] = [
@@ -20,10 +19,7 @@ const SortSelector = () => {
 
   const onSelectItem = (id: number) => {
     dispatch(
-      changeGameQuery({
-        ...stateData,
-        sortOrder: items.find((item) => item.id === id)?.value || "",
-      }),
+      changeSortOrder(items.find((item) => item.id === id)?.value || ""),
     );
   };
 

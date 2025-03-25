@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
-import { ReactNode } from "react";
 import { gameQueriesSlice } from "./gameQueries-slice.ts";
+import { ReactNode } from "react";
 
 export const store = configureStore({
   reducer: { gameQueries: gameQueriesSlice.reducer },

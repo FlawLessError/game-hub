@@ -25,7 +25,6 @@ const GameGrid = ({ className }: Props) => {
     };
 
     const intersectionCallback = (entries: IntersectionObserverEntry[]) => {
-      console.log(entries);
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const target = entry.target as HTMLButtonElement;

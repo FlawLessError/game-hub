@@ -4,14 +4,15 @@ import { useAppSelector } from "../../store/hooks";
 import styles from "./DynamicHeading.module.scss";
 
 const DynamicHeading = () => {
-  const stateData = useAppSelector((state) => state.gameQueries);
+  const genreId = useAppSelector((state) => state.gameQueries.genreId);
+  const platformId = useAppSelector((state) => state.gameQueries.platformId);
 
   const { data: genres } = useGenres();
-  const genre = genres?.results.find((genre) => genre.id === stateData.genreId);
+  const genre = genres?.results.find((genre) => genre.id === genreId);
 
   const { data: platforms } = usePlatform();
   const platform = platforms?.results.find(
-    (platform) => platform.id === stateData.platformId,
+    (platform) => platform.id === platformId,
   );
 
   let title = "Games";

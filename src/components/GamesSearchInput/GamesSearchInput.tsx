@@ -2,19 +2,16 @@ import { FormEvent, useRef } from "react";
 import styles from "./GamesSearchInput.module.scss";
 
 import { FaSearch } from "react-icons/fa";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { changeGameQuery } from "../../store/gameQueries-slice";
+import { changeSearchQuery } from "../../store/gameQueries-slice";
+import { useAppDispatch } from "../../store/hooks";
 
 const GamesSearchInput = () => {
   const searchRef = useRef<HTMLInputElement>(null);
-  const stateData = useAppSelector((state) => state.gameQueries);
   const dispatch = useAppDispatch();
 
   const handleSearchSubmit = (e: FormEvent) => {
     e.preventDefault();
-    dispatch(
-      changeGameQuery({ ...stateData, searchQuery: searchRef.current!.value }),
-    );
+    dispatch(changeSearchQuery(searchRef.current!.value));
   };
 
   return (

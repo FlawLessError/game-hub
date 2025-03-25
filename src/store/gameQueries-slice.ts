@@ -8,8 +8,8 @@ export type SearchQueryType = string;
 export type GameQueriesTypes = {
   genreId?: GenreType;
   platformId?: PlatformType;
-  sortOrder: SortOrderType;
-  searchQuery: SearchQueryType;
+  sortOrder?: SortOrderType;
+  searchQuery?: SearchQueryType;
 };
 
 const initialState: GameQueriesTypes = {
@@ -23,10 +23,24 @@ export const gameQueriesSlice = createSlice({
   name: "gameQueries",
   initialState,
   reducers: {
-    changeGameQuery: (state, action: PayloadAction<GameQueriesTypes>) => {
-      Object.assign(state, action.payload);
+    changeGenre: (state, action: PayloadAction<GenreType>) => {
+      return { ...state, genreId: action.payload };
+    },
+    changePlatform: (state, action: PayloadAction<PlatformType>) => {
+      return { ...state, platformId: action.payload };
+    },
+    changeSortOrder: (state, action: PayloadAction<SortOrderType>) => {
+      return { ...state, sortOrder: action.payload };
+    },
+    changeSearchQuery: (_state, action: PayloadAction<SearchQueryType>) => {
+      return { searchQuery: action.payload };
     },
   },
 });
 
-export const { changeGameQuery } = gameQueriesSlice.actions;
+export const {
+  changeGenre,
+  changePlatform,
+  changeSortOrder,
+  changeSearchQuery,
+} = gameQueriesSlice.actions;
