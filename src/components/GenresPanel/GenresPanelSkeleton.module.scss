@@ -1,11 +1,18 @@
 @use "../../sass/abstracts/" as *;
 
+.heading {
+  width: 6rem;
+  height: 2rem;
+  border-radius: $border-radius-1;
+  animation: $animate;
+}
 .panel {
   background-color: $color-neutral-100;
   padding: $card-body-padding;
-  border-radius: $border-radius-1;
+  border-right: 2px solid $color-neutral-800;
+  border-radius: $border-radius-1 0 0 $border-radius-1;
   height: fit-content;
-  @include box-shadow();
+  box-shadow: $box-shadow;
 
   .genre {
     display: flex;

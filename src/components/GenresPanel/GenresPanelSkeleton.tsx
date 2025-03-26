@@ -9,6 +9,7 @@ const GenresPanelSkeleton = ({ className }: Props) => {
 
   return (
     <aside className={`${className} ${styles.panel} flow-content`}>
+      <div className={styles.heading}></div>
       {genresShrouds.map((shroud) => (
         <div key={shroud} className={styles.genre}>
           <div className={styles.img}></div>
