@@ -1,3 +1,4 @@
+import React from "react";
 import styles from "./PlatformSelect.module.scss";
 
 import usePlatform from "../../hooks/usePlatforms";
@@ -31,4 +32,4 @@ const PlatformSelect = () => {
   );
 };
 
-export default PlatformSelect;
+export default React.memo(PlatformSelect);
