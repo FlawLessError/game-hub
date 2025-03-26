@@ -1,0 +1,24 @@
+@use "../../sass/abstracts/" as *;
+
+.ErrorMessage {
+  display: block;
+  width: fit-content;
+  border-radius: $border-radius-1;
+  border: 2px solid $color-neutral-800;
+  margin-inline: auto;
+
+  & > * {
+    padding: $card-body-padding;
+  }
+
+  h1 {
+    text-align: center;
+    @include heading($fs-900, $color-neutral-100);
+    background-color: $color-neutral-800;
+  }
+
+  p {
+    font-size: $fs-600;
+    color: $color-neutral-800;
+  }
+}
