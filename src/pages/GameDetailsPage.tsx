@@ -10,8 +10,10 @@ const GameDetailsPage = () => {
 
   return (
     <div className="container" data-type="wide">
-      <h1>{data?.name}</h1>
-      <p>{data?.description_raw}</p>
+      <main>
+        <h1>{data?.name}</h1>
+        <p>{data?.description_raw}</p>
+      </main>
     </div>
   );
 };

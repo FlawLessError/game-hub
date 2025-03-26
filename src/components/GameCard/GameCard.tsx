@@ -1,7 +1,7 @@
 import styles from "./GameCard.module.scss";
 
 import { Link } from "react-router-dom";
-import { Game } from "../../hooks/useGames";
+import { Game } from "../../entities/Game";
 import PlatformsIcons from "./PlatformsIcons";
 import CriticScore from "./CriticScore";
 import imageCrop from "../../services/image-crop";

@@ -1,6 +1,7 @@
 import styles from "./PlatformSelect.module.scss";
 
-import usePlatform, { Platform } from "../../hooks/usePlatforms";
+import usePlatform from "../../hooks/usePlatforms";
+import { Platform } from "../../entities/Platform";
 import { useAppDispatch } from "../../store/hooks";
 import ComboBox from "../UI/ComboBox";
 

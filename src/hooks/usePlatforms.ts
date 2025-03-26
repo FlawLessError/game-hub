@@ -1,11 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
+import { Platform } from "../entities/Platform";
 import HttpClient from "../services/http-client";
-
-export type Platform = {
-  id: number;
-  name: string;
-  slug: string;
-};
 
 const APIClient = new HttpClient<Platform>("/platforms/lists/parents");
 

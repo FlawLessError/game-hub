@@ -1,11 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
+import { Genres } from "../entities/Genres";
 import HttpClient from "../services/http-client";
-
-type Genres = {
-  id: number;
-  name: string;
-  image_background: string;
-};
 
 const APIClient = new HttpClient<Genres>("/genres");
 

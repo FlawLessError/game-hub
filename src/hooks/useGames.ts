@@ -1,19 +1,7 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
+import { Game } from "../entities/Game";
 import HttpClient from "../services/http-client";
 import { useAppSelector } from "../store/hooks";
-
-export type Game = {
-  id: number;
-  name: string;
-  slug: string;
-  background_image: string;
-  metacritic: number;
-  parent_platforms: {
-    platform: {
-      slug: string;
-    };
-  }[];
-};
 
 const APIClient = new HttpClient<Game>("/games");
 
