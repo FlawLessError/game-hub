@@ -1,0 +1,11 @@
+@use "../sass/abstracts/" as *;
+
+.GameDetails {
+  .heading {
+    @include heading($fs-900);
+  }
+
+  .desc {
+    font-size: $fs-500;
+  }
+}

@@ -1,4 +1,7 @@
+import styles from "./GameDetailsPage.module.scss";
+
 import { useParams } from "react-router-dom";
+import ExpendableText from "../components/ExpendableText/ExpendableText";
 import useGameDetails from "../hooks/useGameDetails";
 
 const GameDetailsPage = () => {
@@ -10,9 +13,9 @@ const GameDetailsPage = () => {
 
   return (
     <div className="container" data-type="wide">
-      <main>
-        <h1>{data?.name}</h1>
-        <p>{data?.description_raw}</p>
+      <main className={`${styles.GameDetails} flow-content `}>
+        <h1 className={styles.heading}>{data?.name}</h1>
+        <ExpendableText children={data?.description_raw || ""} />
       </main>
     </div>
   );
