@@ -25,7 +25,7 @@ const GameCard = ({ game }: Props) => {
           />
           {game.metacritic && <CriticScore metacritic={game.metacritic} />}
         </div>
-        <Link to="#" className={styles.title}>
+        <Link to={`games/${game.slug}`} className={styles.title}>
           {game.name}
         </Link>
       </div>
