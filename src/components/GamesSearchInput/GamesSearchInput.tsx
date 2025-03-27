@@ -4,14 +4,18 @@ import styles from "./GamesSearchInput.module.scss";
 import { FaSearch } from "react-icons/fa";
 import { changeSearchQuery } from "../../store/gameQueries-slice";
 import { useAppDispatch } from "../../store/hooks";
+import { useNavigate } from "react-router-dom";
 
 const GamesSearchInput = () => {
   const searchRef = useRef<HTMLInputElement>(null);
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const handleSearchSubmit = (e: FormEvent) => {
     e.preventDefault();
     dispatch(changeSearchQuery(searchRef.current!.value));
+    searchRef.current!.value = "";
+    navigate("/");
   };
 
   return (
