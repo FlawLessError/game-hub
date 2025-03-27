@@ -4,6 +4,9 @@
   .heading {
     @include heading($fs-900);
   }
+  .heading2 {
+    @include heading($fs-700);
+  }
 
   .desc {
     font-size: $fs-500;

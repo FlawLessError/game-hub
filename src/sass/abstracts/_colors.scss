@@ -5,6 +5,7 @@ $color-neutral-300: var(--clr-neutral-300);
 $color-neutral-400: var(--clr-neutral-400);
 $color-neutral-500: var(--clr-neutral-500);
 $color-neutral-600: var(--clr-neutral-600);
+$color-neutral-650: var(--clr-neutral-650);
 $color-neutral-700: var(--clr-neutral-700);
 $color-neutral-800: var(--clr-neutral-800);
 
@@ -21,6 +22,7 @@ $light: (
     400: #303030,
     500: #202020,
     600: #262626,
+    650: #181818,
     700: #141414,
     800: #000000,
   ),
@@ -31,10 +33,11 @@ $dark: (
   "neutral": (
     800: #ffffff,
     700: #e8e8e8,
-    600: #3b3b3b,
-    500: #303030,
-    400: #202020,
-    300: #262626,
+    650: #3b3b3b,
+    600: #303030,
+    500: #202020,
+    400: #262626,
+    300: #181818,
     200: #141414,
     100: #000000,
   ),

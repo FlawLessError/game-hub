@@ -7,7 +7,7 @@ type Props = {
 
 const ExpendableText = ({ children }: Props) => {
   const limit = 300;
-  const [expended, setExpended] = useState(children.length > limit);
+  const [expended, setExpended] = useState(children.length < limit);
   const text = expended ? children : children.slice(0, limit) + "...";
 
   return (
