@@ -1,3 +1,5 @@
+import styles from "./ExpendableText.module.scss";
+
 import { useState } from "react";
 import Button from "../UI/Button";
 
@@ -12,7 +14,7 @@ const ExpendableText = ({ children }: Props) => {
 
   return (
     <div className="flow-content">
-      <p>{text}</p>
+      <p className={styles.expendableText}>{text}</p>
       <Button data-type="primary" onClick={() => setExpended((prev) => !prev)}>
         {expended ? "Show less" : "Show more"}
       </Button>

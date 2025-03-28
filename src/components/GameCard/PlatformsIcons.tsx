@@ -28,6 +28,8 @@ const PlatformsIcons = ({ platforms }: Props) => {
     nintendo: <BsNintendoSwitch />,
   };
 
+  if (!platforms) return null;
+
   if (platforms.length > 4) {
     const remains = platforms.length - 4;
     platforms = platforms.slice(0, 4);

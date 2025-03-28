@@ -1,0 +1,43 @@
+@use "../sass/abstracts/" as *;
+
+.GameDetails {
+  margin-block-start: $section-padding-block;
+  display: grid;
+  grid-gap: $grid-gap;
+
+  @include mq(xl) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .heading {
+    max-width: 40rem;
+    min-height: 4rem;
+  }
+
+  .heading2 {
+    margin-block-start: clamp(1rem, 0.5rem + 3vw, 2rem);
+    max-width: 10rem;
+    min-height: 2rem;
+  }
+
+  .details {
+    max-width: 100%;
+    min-height: 8rem;
+  }
+
+  .heading,
+  .heading2,
+  .details,
+  .video {
+    width: 100%;
+    animation: $animate;
+    border-radius: $border-radius-1;
+  }
+}
+
+@include flashAnimation();

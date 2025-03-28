@@ -1,28 +1,14 @@
 @use "../../sass/abstracts/" as *;
 
-.GameDetails {
-  display: grid;
-
-  grid-template-columns: repeat(2, 1fr);
-  gap: $grid-gap;
+.details {
+  display: flex;
+  flex-direction: column;
 
   .heading {
-    @include heading($fs-400, $color-neutral-650);
-    margin-block-end: rem(16);
+    @include heading($fs-900);
   }
-
-  & > div > ul {
-    display: flex;
-    gap: 0.2rem;
-    flex-wrap: wrap;
-  }
-
-  a {
-    color: $color-neutral-800;
-    transition: 200ms ease-in-out;
-    border-radius: $border-radius-1;
-    &:is(:hover, :focus) {
-      transform: scale(1.02);
-    }
+  .heading2 {
+    margin-block-start: clamp(1rem, 0.5rem + 3vw, 2rem);
+    @include heading($fs-700);
   }
 }

@@ -1,24 +1,28 @@
 import styles from "./GameDetailsPage.module.scss";
 
 import { useParams } from "react-router-dom";
-import ExpendableText from "../components/ExpendableText/ExpendableText";
 import useGameDetails from "../hooks/useGameDetails";
+import GameTrailer from "../components/GameTrailer/GameTrailer";
+import GameAdditionalDetails from "../components/GameAdditionalDetails/GameAdditionalDetails";
 import GameDetails from "../components/GameDetails/GameDetails";
+import GameDetailsPageSkeleton from "./GameDetailsPageSkeleton";
 
 const GameDetailsPage = () => {
   const { slug } = useParams();
   const { data, error, isLoading } = useGameDetails(slug!);
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return <GameDetailsPageSkeleton />;
   if (error) throw Error("An error occured!");
 
   return (
     <div className="container" data-type="wide">
-      <main className={`${styles.GameDetails} flow-content `}>
-        <h1 className={styles.heading}>{data?.name}</h1>
-        <h2 className={styles.heading2}>About</h2>
-        <ExpendableText children={data?.description_raw || ""} />
-        <GameDetails {...data!} />
+      <main className={`${styles.GameDetails} flow-content`}>
+        <div className={styles.firstSpliter}>
+          {data && <GameDetails data={data} />}
+          {data && <GameTrailer slug={data.slug} />}
+        </div>
+
+        <GameAdditionalDetails {...data!} />
       </main>
     </div>
   );

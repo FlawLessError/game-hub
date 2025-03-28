@@ -1,0 +1,44 @@
+@use "../../sass/abstracts/" as *;
+
+.GameDetails {
+  display: grid;
+  gap: $grid-gap;
+
+  @include mq(md) {
+    grid-template-columns: repeat(2, minmax(auto, rem(400)));
+  }
+
+  .heading {
+    @include heading($fs-400, $color-neutral-650);
+    margin-block-end: 1rem;
+  }
+
+  & > div {
+    position: relative;
+    height: fit-content;
+    @include box-shadow(after);
+
+    background: linear-gradient(
+      80deg,
+      $color-neutral-200 95%,
+      $color-neutral-700
+    );
+    border-radius: $border-radius-1;
+    padding: $card-body-padding;
+
+    ul {
+      display: flex;
+      gap: 0.2rem;
+      flex-wrap: wrap;
+    }
+  }
+
+  a {
+    color: $color-neutral-800;
+    transition: 200ms ease-in-out;
+    border-radius: $border-radius-1;
+    &:is(:hover, :focus) {
+      transform: scale(1.02);
+    }
+  }
+}

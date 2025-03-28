@@ -21,7 +21,7 @@ const GameCard = ({ game }: Props) => {
       <div className={`${styles.info} flow-content`}>
         <div className={styles.platforms_metric}>
           <PlatformsIcons
-            platforms={game.parent_platforms.map(({ platform }) => platform)}
+            platforms={game.parent_platforms?.map(({ platform }) => platform)}
           />
           {game.metacritic && <CriticScore metacritic={game.metacritic} />}
         </div>

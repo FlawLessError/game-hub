@@ -9,9 +9,10 @@ class HttpClient<T> {
       .get<FetchedData<T>>(this.endPoint, config)
       .then((res) => res.data);
 
-  get = (id: number | string) => {
+  get = async (id: number | string) => {
     if (typeof id === "number") id = id.toString();
-    apiClient.get<T>(this.endPoint + `/${id}`).then((res) => res.data);
+    const res = await apiClient.get<T>(this.endPoint + `/${id}`);
+    return res.data;
   };
 }
 

@@ -1,11 +1,14 @@
 @use "../sass/abstracts/" as *;
 
 .GameDetails {
-  .heading {
-    @include heading($fs-900);
-  }
-  .heading2 {
-    @include heading($fs-700);
+  margin-block-start: $section-padding-block;
+  .firstSpliter {
+    display: grid;
+    grid-gap: $grid-gap;
+
+    @include mq(xl) {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 
   .desc {

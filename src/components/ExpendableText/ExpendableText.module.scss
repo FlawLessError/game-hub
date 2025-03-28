@@ -1,0 +1,9 @@
+@use "../../sass/abstracts/" as *;
+
+.expendableText {
+  max-height: 15rem;
+  padding: $card-body-padding;
+  border: 1px solid $color-neutral-800;
+  border-radius: $border-radius-1;
+  overflow-y: auto;
+}
