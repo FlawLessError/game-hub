@@ -3,32 +3,28 @@
 .gameCard {
   user-select: text;
   height: $game-card-height;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 1fr);
   border-radius: $border-radius-1;
   background-color: $color-neutral-200;
   box-shadow: $box-shadow;
-  overflow: hidden;
   transition: 200ms ease-in-out;
 
-  & > * {
-    flex-basis: 100%;
-  }
-
-  img {
-    pointer-events: none;
-    height: 100%;
-    object-fit: cover;
-    object-position: top;
+  & > div {
+    overflow: hidden;
+    img {
+      pointer-events: none;
+      object-fit: cover;
+      object-position: top;
+    }
   }
   .img {
-    background-color: red;
-    height: 100%;
+    background-color: gray;
   }
 
   .info {
     padding: $card-body-padding;
-    flex-basis: 80%;
   }
 
   .platforms_metric {

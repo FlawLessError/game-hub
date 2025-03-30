@@ -14,7 +14,9 @@ const GameCard = ({ game }: Props) => {
   return (
     <div className={styles.gameCard}>
       {imageCrop(game.background_image) ? (
-        <img src={imageCrop(game.background_image)!} alt="" />
+        <div className={styles.img}>
+          <img src={imageCrop(game.background_image)!} alt="" />
+        </div>
       ) : (
         <div className={styles.img}></div>
       )}
