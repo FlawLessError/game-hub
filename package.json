@@ -38,6 +38,7 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.18",
     "globals": "^15.14.0",
+    "postcss": "^8.5.3",
     "postcss-preset-env": "^10.1.4",
     "react-scan": "^0.3.3",
     "sass": "^1.84.0",
