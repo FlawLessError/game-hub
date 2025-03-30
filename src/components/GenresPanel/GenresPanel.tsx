@@ -7,7 +7,7 @@ import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import Button from "../UI/Button";
 import GenresPanelSkeleton from "./GenresPanelSkeleton";
 import ExitButton from "../ExitButton/ExitButton";
-import { useState } from "react";
+// import { useState } from "react";
 
 type Props = {
   className: string;
@@ -15,7 +15,7 @@ type Props = {
 
 const GenresPanel = ({ className }: Props) => {
   const { data, error, isLoading } = useGenres();
-  const [isVisible, setVisible] = useState(false);
+  // const [isVisible, setVisible] = useState(false);
   const genreId = useAppSelector((state) => state.gameQueries.genreId);
   const dispatch = useAppDispatch();
 

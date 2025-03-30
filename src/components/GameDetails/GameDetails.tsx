@@ -1,5 +1,6 @@
 import styles from "./GameDetails.module.scss";
 import ExpendableText from "../ExpendableText/ExpendableText";
+import { Game } from "../../entities/Game";
 
 type Props = {
   data: Game;

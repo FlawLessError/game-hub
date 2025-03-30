@@ -3,7 +3,7 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 
 import { CSSTransition } from "react-transition-group";
 
-import { memo, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type Props<T> = {
   preFix?: string;
@@ -17,7 +17,7 @@ type Type = {
   name: string;
 };
 
-const ComboBox = memo(<T extends Type>(props: Props<T>) => {
+const ComboBox = <T extends Type>(props: Props<T>) => {
   const [title, setTitle] = useState(props.title);
   const [itemsVisible, setItemsVisible] = useState(false);
   const nodeRef = useRef<HTMLUListElement>(null);
@@ -111,6 +111,6 @@ const ComboBox = memo(<T extends Type>(props: Props<T>) => {
       </CSSTransition>
     </div>
   );
-});
+};
 
 export default ComboBox;

@@ -2,7 +2,6 @@ import styles from "./GameScreenShotsModal.module.scss";
 
 import useGameScreenShots from "../../hooks/useGameScreenShots";
 
-import { IoMdExit } from "react-icons/io";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Zoom, Pagination, EffectCreative } from "swiper/modules";
 
@@ -11,7 +10,6 @@ import "../../../node_modules/swiper/modules/navigation.scss";
 import "../../../node_modules/swiper/modules/pagination.scss";
 import "../../../node_modules/swiper/modules/zoom.scss";
 
-import Button from "../UI/Button";
 import LeftButton from "./LeftButton";
 import RightButton from "./RightButton";
 import ExitButton from "../ExitButton/ExitButton";
