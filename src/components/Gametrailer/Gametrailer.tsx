@@ -1,6 +1,6 @@
 import styles from "./GameTrailer.module.scss";
 
-import useGameTrailer from "../../hooks/useGameTrailer";
+import useGameTrailer from "../../hooks/useGameTrailer.ts";
 import GameTrailerSkeleton from "./GameTrailerSkeleton";
 
 type Props = {
