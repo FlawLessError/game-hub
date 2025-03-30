@@ -14,6 +14,7 @@ import "../../../node_modules/swiper/modules/zoom.scss";
 import Button from "../UI/Button";
 import LeftButton from "./LeftButton";
 import RightButton from "./RightButton";
+import ExitButton from "../ExitButton/ExitButton";
 
 type Props = {
   slug: string;
@@ -30,13 +31,7 @@ const GameScreenShotsModal = ({ slug, index, onSetVisisble }: Props) => {
     <>
       <div className={`${styles.swiperContainer}`}>
         <div className="container" data-type="wide">
-          <Button
-            onClick={() => onSetVisisble()}
-            data-type="primary"
-            className={styles.exitButton}
-          >
-            <IoMdExit />
-          </Button>
+          <ExitButton onSetVisible={onSetVisisble} />
           <Swiper
             className={styles.swiper}
             effect={"creative"}

@@ -3,6 +3,7 @@
 .swiperContainer {
   position: fixed;
   inset: 0;
+  padding-block-start: 1rem;
   background-color: $color-neutral-100;
   color: $color-neutral-800;
   text-align: center;
@@ -34,16 +35,6 @@
   object-fit: cover;
   object-position: 50% 50%;
   border-radius: $border-radius-1;
-}
-
-.exitButton {
-  position: absolute;
-  top: 1rem;
-  right: 0rem;
-  padding: 0.5rem;
-  width: fit-content;
-  font-size: $fs-700;
-  z-index: 10;
 }
 
 .paginationContainer :global(.swiper-pagination-bullet) {

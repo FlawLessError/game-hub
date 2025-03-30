@@ -1,14 +1,43 @@
 @use "../../sass/abstracts/" as *;
 
-.heading {
-  @include heading($fs-700);
+.asideContainer {
+  position: fixed;
+  inset: 0;
+  padding: 0.5rem;
+
+  @include mq(md) {
+    all: unset;
+    margin: 0;
+
+    & > div {
+      width: 100%;
+    }
+  }
+  z-index: 10;
+
+  .heading {
+    h2 {
+      @include heading($fs-700);
+    }
+    position: relative;
+    padding-block: 0.5rem;
+    display: flex;
+    align-items: center;
+
+    button {
+      @include mq(md) {
+        display: none;
+      }
+    }
+  }
 }
+
 .panel {
   position: sticky;
   top: 2rem;
+  max-height: calc(100vh - 11rem);
   border-right: 2px solid $color-neutral-800;
   border-radius: $border-radius-1 0 0 $border-radius-1;
-  max-height: calc(100vh - 11rem);
   overflow-y: auto;
   box-shadow: $box-shadow;
 

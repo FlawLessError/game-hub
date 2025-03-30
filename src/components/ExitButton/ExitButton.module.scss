@@ -1,0 +1,11 @@
+@use "../../sass/abstracts/" as *;
+
+.exitButton {
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
+  padding: 0.5rem;
+  width: fit-content;
+  font-size: $fs-700;
+  z-index: 10;
+}
