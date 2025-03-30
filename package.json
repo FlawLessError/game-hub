@@ -33,6 +33,8 @@
     "@types/react-dom": "^19.0.3",
     "@types/react-router-hash-link": "^2",
     "@types/react-transition-group": "^4",
+    "@typescript-eslint/eslint-plugin": "^8.28.0",
+    "@typescript-eslint/parser": "^8.28.0",
     "@vitejs/plugin-react": "^4.3.4",
     "eslint": "^9.19.0",
     "eslint-plugin-react-hooks": "^5.0.0",
