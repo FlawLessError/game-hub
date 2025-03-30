@@ -1,0 +1,30 @@
+@use "../../sass/abstracts/" as *;
+
+.button {
+  position: absolute;
+  top: calc(50% - 6rem);
+  padding: 5rem 0;
+  border: 1px solid $color-neutral-800;
+  font-size: 2rem;
+  background-color: $color-neutral-100;
+  color: $color-neutral-800;
+  transition: 200ms ease-in-out;
+
+  z-index: 5;
+
+  &[data-type="left"] {
+    left: 0rem;
+  }
+  &[data-type="right"] {
+    right: 0rem;
+  }
+
+  &:is(:hover, :focus) {
+    background-color: $color-neutral-800;
+    color: $color-neutral-100;
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+}

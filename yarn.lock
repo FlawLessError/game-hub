@@ -1951,6 +1951,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/swiper@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "@types/swiper@npm:6.0.0"
+  dependencies:
+    swiper: "npm:*"
+  checksum: 10c0/096a4a8017b296752d5a72bf5da07e2507eed0ae32603ce560060c9aee6134431c2d34fcde42bde3f4790ec498aa6e697d0e02d2b6a3e58d99c72a4794d3e9ba
+  languageName: node
+  linkType: hard
+
 "@types/use-sync-external-store@npm:^0.0.6":
   version: 0.0.6
   resolution: "@types/use-sync-external-store@npm:0.0.6"
@@ -4743,6 +4752,7 @@ __metadata:
     "@types/react-dom": "npm:^19.0.3"
     "@types/react-router-hash-link": "npm:^2"
     "@types/react-transition-group": "npm:^4"
+    "@types/swiper": "npm:^6.0.0"
     "@vitejs/plugin-react": "npm:^4.3.4"
     axios: "npm:^1.8.3"
     eslint: "npm:^9.19.0"
@@ -4759,6 +4769,7 @@ __metadata:
     react-scan: "npm:^0.3.3"
     react-transition-group: "npm:^4.4.5"
     sass: "npm:^1.84.0"
+    swiper: "npm:^11.2.6"
     tsx: "npm:^4.19.3"
     typescript: "npm:~5.7.2"
     typescript-eslint: "npm:^8.22.0"
@@ -4932,6 +4943,13 @@ __metadata:
   dependencies:
     has-flag: "npm:^4.0.0"
   checksum: 10c0/afb4c88521b8b136b5f5f95160c98dee7243dc79d5432db7efc27efb219385bbc7d9427398e43dd6cc730a0f87d5085ce1652af7efbe391327bc0a7d0f7fc124
+  languageName: node
+  linkType: hard
+
+"swiper@npm:*, swiper@npm:^11.2.6":
+  version: 11.2.6
+  resolution: "swiper@npm:11.2.6"
+  checksum: 10c0/36ba63e2d1c5045f647f0f07b3a25c164393fb89b17db63f57fa9f776eb61bc5cb2c34634f80cf69caaddc209a174d0cd7be23c580785534569ea4a098b3a42c
   languageName: node
   linkType: hard
 

@@ -4,8 +4,8 @@
   display: grid;
   gap: $grid-gap;
 
-  @include mq(md) {
-    grid-template-columns: repeat(2, minmax(auto, rem(400)));
+  @include mq(xl) {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .heading {

@@ -1,0 +1,66 @@
+@use "../../sass/abstracts/" as *;
+
+.swiperContainer {
+  position: fixed;
+  inset: 0;
+  background-color: $color-neutral-100;
+  color: $color-neutral-800;
+  text-align: center;
+  z-index: 100;
+  overflow-y: auto;
+
+  & > div {
+    position: relative;
+  }
+
+  .swiper {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+
+    .swiperSlide {
+      border-radius: $border-radius-1;
+      overflow: hidden;
+
+      & > div {
+        margin-inline: auto;
+        max-width: 70rem;
+        min-height: 30rem;
+      }
+    }
+  }
+}
+
+.screenshot {
+  object-fit: cover;
+  object-position: 50% 50%;
+  border-radius: $border-radius-1;
+}
+
+.exitButton {
+  position: absolute;
+  top: 1rem;
+  right: 0rem;
+  padding: 0.5rem;
+  width: fit-content;
+  font-size: $fs-700;
+  z-index: 10;
+}
+
+.paginationContainer :global(.swiper-pagination-bullet) {
+  cursor: pointer;
+  width: 1rem;
+  height: 1rem;
+  background-color: $color-neutral-100;
+  margin-inline: 0.5rem;
+  border: 2px solid $color-neutral-800;
+  border-radius: $bottom-margin-block-end;
+  transition: 200ms ease-in-out;
+  z-index: 1;
+}
+
+.paginationContainer :global(.swiper-pagination-bullet-active) {
+  // border: 2px solid red;
+  width: 2rem;
+  background-color: $color-neutral-800;
+  transform: scale(1.3);
+}

@@ -2,12 +2,13 @@
 
 .GameDetails {
   margin-block-start: $section-padding-block;
-  .firstSpliter {
+  .firstSpliter,
+  .secondSpliter {
     display: grid;
     grid-gap: $grid-gap;
 
     @include mq(xl) {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 

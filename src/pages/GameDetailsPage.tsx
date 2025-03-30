@@ -6,6 +6,8 @@ import GameTrailer from "../components/GameTrailer/GameTrailer";
 import GameAdditionalDetails from "../components/GameAdditionalDetails/GameAdditionalDetails";
 import GameDetails from "../components/GameDetails/GameDetails";
 import GameDetailsPageSkeleton from "./GameDetailsPageSkeleton";
+import GameScreenShotsModal from "../components/GameScreenShotsModal/GameScreenShotsModal";
+import GameScreenShot from "../components/GameScreenShot/GameScreenShot";
 
 const GameDetailsPage = () => {
   const { slug } = useParams();
@@ -13,6 +15,8 @@ const GameDetailsPage = () => {
 
   if (isLoading) return <GameDetailsPageSkeleton />;
   if (error) throw Error("An error occured!");
+
+  const onSetVisible = () => {};
 
   return (
     <div className="container" data-type="wide">
@@ -22,7 +26,10 @@ const GameDetailsPage = () => {
           {data && <GameTrailer slug={data.slug} />}
         </div>
 
-        <GameAdditionalDetails {...data!} />
+        <div className={styles.secondSpliter}>
+          <GameAdditionalDetails {...data!} />
+          <GameScreenShot slug={slug!} />
+        </div>
       </main>
     </div>
   );
