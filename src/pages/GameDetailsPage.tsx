@@ -1,12 +1,12 @@
 import styles from "./GameDetailsPage.module.scss";
 
 import { useParams } from "react-router-dom";
-import useGameDetails from "../hooks/useGameDetails.ts";
-import GameAdditionalDetails from "../components/GameAdditionalDetails/GameAdditionalDetails.tsx";
-import GameDetails from "../components/GameDetails/GameDetails.tsx";
-import GameDetailsPageSkeleton from "./GameDetailsPageSkeleton.tsx";
-import GameScreenShot from "../components/GameScreenShot/GameScreenShot.tsx";
-import GameTrailer from "../components/GameTrailer/GameTrailer.tsx";
+import useGameDetails from "../hooks/useGameDetails";
+import GameAdditionalDetails from "../components/GameAdditionalDetails/GameAdditionalDetails";
+import GameDetails from "../components/GameDetails/GameDetails";
+import GameDetailsPageSkeleton from "./GameDetailsPageSkeleton";
+import GameScreenShot from "../components/GameScreenShot/GameScreenShot";
+import GameTrailer from "../components/GameTrailer/GameTrailer";
 
 const GameDetailsPage = () => {
   const { slug } = useParams();
