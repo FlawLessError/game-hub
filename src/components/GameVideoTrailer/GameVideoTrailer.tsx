@@ -16,11 +16,12 @@ const GameVideoTrailer = ({ slug }: Props) => {
 
   return (
     <div>
-      <video>
+      <video
         className={styles.video}
-        controls src={trailers[0].data.max}
+        controls
+        src={trailers[0].data.max}
         poster={trailers[0].preview}
-      </video>
+      ></video>
     </div>
   );
 };

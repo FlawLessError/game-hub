@@ -7,8 +7,6 @@ import GameDetails from "../components/GameDetails/GameDetails";
 import GameDetailsPageSkeleton from "./GameDetailsPageSkeleton";
 import GameScreenShot from "../components/GameScreenShot/GameScreenShot";
 import GameVideoTrailer from "../components/GameVideoTrailer/GameVideoTrailer";
-// TODO: Fix this forsaken error!
-// import GameTrailer from "../components/GameTrailer/Gametrailer";
 
 const GameDetailsPage = () => {
   const { slug } = useParams();
@@ -16,8 +14,6 @@ const GameDetailsPage = () => {
 
   if (isLoading) return <GameDetailsPageSkeleton />;
   if (error) throw Error("An error occured!");
-
-  // const onSetVisible = () => {};
 
   return (
     <div className="container" data-type="wide">
