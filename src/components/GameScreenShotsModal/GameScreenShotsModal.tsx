@@ -5,10 +5,10 @@ import useGameScreenShots from "../../hooks/useGameScreenShots";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Zoom, Pagination, EffectCreative } from "swiper/modules";
 
-import "../../../node_modules/swiper/swiper.scss";
-import "../../../node_modules/swiper/modules/navigation.scss";
-import "../../../node_modules/swiper/modules/pagination.scss";
-import "../../../node_modules/swiper/modules/zoom.scss";
+import "swiper/scss";
+import "swiper/scss/navigation";
+import "swiper/scss/pagination";
+import "swiper/scss/zoom";
 
 import LeftButton from "./LeftButton";
 import RightButton from "./RightButton";
