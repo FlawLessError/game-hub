@@ -6,7 +6,9 @@ import GameAdditionalDetails from "../components/GameAdditionalDetails/GameAddit
 import GameDetails from "../components/GameDetails/GameDetails";
 import GameDetailsPageSkeleton from "./GameDetailsPageSkeleton";
 import GameScreenShot from "../components/GameScreenShot/GameScreenShot";
-import GameTrailer from "../components/GameTrailer/GameTrailer";
+import GameVideoTrailer from "../components/GameVideoTrailer/GameVideoTrailer";
+// TODO: Fix this forsaken error!
+// import GameTrailer from "../components/GameTrailer/Gametrailer";
 
 const GameDetailsPage = () => {
   const { slug } = useParams();
@@ -22,7 +24,7 @@ const GameDetailsPage = () => {
       <main className={`${styles.GameDetails} flow-content`}>
         <div className={styles.firstSpliter}>
           {data && <GameDetails data={data} />}
-          {data && <GameTrailer slug={data.slug} />}
+          {data && <GameVideoTrailer slug={data.slug} />}
         </div>
 
         <div className={styles.secondSpliter}>
