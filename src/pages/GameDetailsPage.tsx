@@ -6,7 +6,7 @@ import GameAdditionalDetails from "../components/GameAdditionalDetails/GameAddit
 import GameDetails from "../components/GameDetails/GameDetails.tsx";
 import GameDetailsPageSkeleton from "./GameDetailsPageSkeleton.tsx";
 import GameScreenShot from "../components/GameScreenShot/GameScreenShot.tsx";
-// import GameTrailer from "../components/GameTrailer/GameTrailer.tsx";
+import GameTrailer from "../components/GameTrailer/GameTrailer.tsx";
 
 const GameDetailsPage = () => {
   const { slug } = useParams();
@@ -22,7 +22,7 @@ const GameDetailsPage = () => {
       <main className={`${styles.GameDetails} flow-content`}>
         <div className={styles.firstSpliter}>
           {data && <GameDetails data={data} />}
-          {/* {data && <GameTrailer slug={data.slug} />} */}
+          {data && <GameTrailer slug={data.slug} />}
         </div>
 
         <div className={styles.secondSpliter}>
