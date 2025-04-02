@@ -1,13 +1,13 @@
 import styles from "./GameDetailsPage.module.scss";
 
+import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
-import useGameDetails from "../hooks/useGameDetails";
 import GameAdditionalDetails from "../components/GameAdditionalDetails/GameAdditionalDetails";
 import GameDetails from "../components/GameDetails/GameDetails";
-import GameDetailsPageSkeleton from "./GameDetailsPageSkeleton";
 import GameScreenShot from "../components/GameScreenShot/GameScreenShot";
 import GameVideoTrailer from "../components/GameVideoTrailer/GameVideoTrailer";
-import GameMetaData from "./GameMetaData";
+import useGameDetails from "../hooks/useGameDetails";
+import GameDetailsPageSkeleton from "./GameDetailsPageSkeleton";
 
 const GameDetailsPage = () => {
   const { slug } = useParams();
@@ -18,7 +18,16 @@ const GameDetailsPage = () => {
 
   return (
     <div className="container" data-type="wide">
-      <GameMetaData data={data!} />
+      <Helmet>
+        <title>{data?.name}</title>
+        <meta property="og:title" content={data?.name} />
+        <meta
+          property="og:url"
+          content={`${import.meta.env.VITE_APP_URL}/games/${data?.slug}`}
+        />
+        <meta property="og:image" content={data?.background_image} />
+        <meta name="description" content={data?.description_raw} />
+      </Helmet>
 
       <main className={`${styles.GameDetails} flow-content`}>
         <div className={styles.firstSpliter}>
