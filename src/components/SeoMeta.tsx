@@ -5,9 +5,11 @@ type Props = {
   description: string;
   name: string;
   type: string;
+  img?: string;
+  slug?: string;
 };
 
-const SeoMeta = ({ title, description, name, type }: Props) => {
+const SeoMeta = ({ title, description, name, type, img, slug }: Props) => {
   return (
     <Helmet>
       {/* Standard metadata tags */}
@@ -18,12 +20,27 @@ const SeoMeta = ({ title, description, name, type }: Props) => {
       <meta property="og:type" content={type} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
+      {img && <meta property="og:image" content={img} />}
+      {slug && (
+        <meta
+          property="og:url"
+          content={import.meta.env.VITE_APP_URL + "/games/" + slug}
+        />
+      )}
       {/* End Facebook tags */}
       {/* Twitter tags */}
       <meta name="twitter:creator" content={name} />
       <meta name="twitter:card" content={type} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
+      {img && <meta property="twitter:image" content={img} />}
+      {slug && (
+        <meta
+          property="twitter:site"
+          content={import.meta.env.VITE_APP_URL + "/games/" + slug}
+        />
+      )}
+
       {/* End Twitter tags */}
     </Helmet>
   );
