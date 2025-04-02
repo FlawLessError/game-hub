@@ -7,6 +7,7 @@ import GameDetails from "../components/GameDetails/GameDetails";
 import GameDetailsPageSkeleton from "./GameDetailsPageSkeleton";
 import GameScreenShot from "../components/GameScreenShot/GameScreenShot";
 import GameVideoTrailer from "../components/GameVideoTrailer/GameVideoTrailer";
+import GameMetaData from "./GameMetaData";
 
 const GameDetailsPage = () => {
   const { slug } = useParams();
@@ -17,6 +18,8 @@ const GameDetailsPage = () => {
 
   return (
     <div className="container" data-type="wide">
+      <GameMetaData data={data!} />
+
       <main className={`${styles.GameDetails} flow-content`}>
         <div className={styles.firstSpliter}>
           {data && <GameDetails data={data} />}
