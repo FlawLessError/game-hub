@@ -10,6 +10,7 @@
   background-color: $color-neutral-200;
   box-shadow: $box-shadow;
   transition: 200ms ease-in-out;
+  overflow: hidden;
 
   & > div {
     overflow: hidden;
