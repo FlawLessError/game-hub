@@ -1,16 +1,16 @@
 import styles from "./Layout.module.scss";
 
-import { Fragment } from "react/jsx-runtime";
+import { HelmetProvider } from "react-helmet-async";
 import { Outlet } from "react-router-dom";
 import NavBar from "../components/NavBar/NavBar";
 
 const Layout = () => {
   return (
-    <Fragment>
+    <HelmetProvider>
       <NavBar />
       <Outlet />
       <div className={styles.end}></div>
-    </Fragment>
+    </HelmetProvider>
   );
 };
 
