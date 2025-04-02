@@ -1,6 +1,5 @@
 import styles from "./GameDetailsPage.module.scss";
 
-import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
 import GameAdditionalDetails from "../components/GameAdditionalDetails/GameAdditionalDetails";
 import GameDetails from "../components/GameDetails/GameDetails";
@@ -8,6 +7,7 @@ import GameScreenShot from "../components/GameScreenShot/GameScreenShot";
 import GameVideoTrailer from "../components/GameVideoTrailer/GameVideoTrailer";
 import useGameDetails from "../hooks/useGameDetails";
 import GameDetailsPageSkeleton from "./GameDetailsPageSkeleton";
+import SeoMeta from "../components/SeoMeta";
 
 const GameDetailsPage = () => {
   const { slug } = useParams();
@@ -18,16 +18,12 @@ const GameDetailsPage = () => {
 
   return (
     <div className="container" data-type="wide">
-      <Helmet>
-        <title>{data?.name}</title>
-        <meta property="og:title" content={data?.name} />
-        <meta
-          property="og:url"
-          content={`${import.meta.env.VITE_APP_URL}/games/${data?.slug}`}
-        />
-        <meta property="og:image" content={data?.background_image} />
-        <meta name="description" content={data?.description_raw} />
-      </Helmet>
+      <SeoMeta
+        title={data?.name || ""}
+        description={data?.description_raw || ""}
+        name={data?.name || ""}
+        type={"website"}
+      />
 
       <main className={`${styles.GameDetails} flow-content`}>
         <div className={styles.firstSpliter}>
