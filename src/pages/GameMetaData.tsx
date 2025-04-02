@@ -11,7 +11,7 @@ const GameMetaData = ({ data }: Props) => {
       <meta property="og:title" content={data?.name} />
       <meta
         property="og:url"
-        content={`http://localhost:5174/games/${data?.slug}`}
+        content={`${import.meta.env.VITE_APP_URL}/games/${data?.slug}`}
       />
       <meta property="og:image" content={data?.background_image} />
       <meta name="description" content={data?.description_raw} />

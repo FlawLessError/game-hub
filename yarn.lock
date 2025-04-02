@@ -2656,6 +2656,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dotenv@npm:^16.4.7":
+  version: 16.4.7
+  resolution: "dotenv@npm:16.4.7"
+  checksum: 10c0/be9f597e36a8daf834452daa1f4cc30e5375a5968f98f46d89b16b983c567398a330580c88395069a77473943c06b877d1ca25b4afafcdd6d4adb549e8293462
+  languageName: node
+  linkType: hard
+
 "dunder-proto@npm:^1.0.1":
   version: 1.0.1
   resolution: "dunder-proto@npm:1.0.1"
@@ -4870,6 +4877,7 @@ __metadata:
     "@typescript-eslint/parser": "npm:^8.28.0"
     "@vitejs/plugin-react": "npm:^4.3.4"
     axios: "npm:^1.8.3"
+    dotenv: "npm:^16.4.7"
     esbuild: "npm:^0.25.2"
     eslint: "npm:^9.19.0"
     eslint-plugin-react-hooks: "npm:^5.2.0"
