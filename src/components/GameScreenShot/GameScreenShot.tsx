@@ -43,6 +43,7 @@ const GameScreenShot = ({ slug }: Props) => {
     <div className={styles.miniShots}>
       {maxShots.map((shot, i) => (
         <img
+          key={shot.id}
           onClick={() => viewAllHandler(i)}
           className={styles.miniShot}
           src={imageCrop(shot.image)}
